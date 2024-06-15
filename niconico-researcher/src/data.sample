@@ -1,0 +1,119 @@
+Cells: [
+            {
+                userId: 1,
+                userHashTag: '#3322',
+                userMetaName: ['かつき', 'ににまる', 'まんちょ'],
+                userName: 'かつき',
+                platform: [
+                    {
+                        platformId: Platform.Services.Twitch.serviceId,
+                        platformName: Platform.Services.Twitch.label,
+                        hasAccount: true,
+                        isBroadCasting: false,
+                        displayTextContent: '@220niconico',
+                        accountUserName: 'いちまる',
+                        accountURL: 'https://www.twitch.tv/infinity_mkds',
+                        accountIconImageURL: ''
+                    },
+                    {
+                        platformId: Platform.Services.Twitch.serviceId,
+                        platformName: Platform.Services.Twitch.label,
+                        hasAccount: true,
+                        isBroadCasting: false,
+                        displayTextContent: '@220niconico',
+                        accountUserName: 'ににまる',
+                        accountURL: 'https://www.twitch.tv/infinity_mkds',
+                        accountIconImageURL: ''
+                    }
+                ]
+            },
+            {
+                userId: 2,
+                userHashTag: '#8729',
+                userMetaName: ['笑原心恋', '心恋', 'ここ'],
+                userName: '心恋(ここ)',
+                platform: [
+                    {
+                        platformId: Platform.Services.OpenREC.serviceId,
+                        platformName: Platform.Services.OpenREC.label,
+                        hasAccount: true,
+                        isBroadCasting: true,
+                        displayTextContent: '@2525coco',
+                        accountUserName: 'ここ',
+                        accountURL: 'https://www.twitch.tv/infinity_mkds',
+                        accountIconImageURL: ''
+                    }
+                ]
+            },
+            {
+                userId: 3,
+                userHashTag: '#2891',
+                userMetaName: ['ねむこ'],
+                userName: 'ねむこ',
+                platform: [
+                    {
+                        platformId: Platform.Services.YouTubeLive.serviceId,
+                        platformName: Platform.Services.YouTubeLive.label,
+                        hasAccount: true,
+                        isBroadCasting: false,
+                        displayTextContent: '@nemuko',
+                        accountUserName: 'ねむこ＠へるぷ垢',
+                        accountURL: 'https://www.twitch.tv/infinity_mkds',
+                        accountIconImageURL: ''
+                    }
+                ]
+            },
+            {
+                userId: 4,
+                userHashTag: '#9192',
+                userMetaName: ['茂原', '茂原会', '大イム', 'ご主人'],
+                userName: '大仏',
+                platform: [
+                    {
+                        platformId: Platform.Services.Other.serviceId,
+                        platformName: Platform.Services.Other.label,
+                        hasAccount: true,
+                        isBroadCasting: false,
+                        displayTextContent: 'FC2：@aaaa',
+                        accountUserName: 'あああ',
+                        accountURL: 'https://www.twitch.tv/infinity_mkds',
+                        accountIconImageURL: ''
+                    }
+                ]
+            },
+            {
+                userId: 5,
+                userHashTag: '#6789',
+                userMetaName: [],
+                userName: '皐月　りりあ',
+                platform: [
+                    {
+                        platformId: Platform.Services.OpenREC.serviceId,
+                        platformName: Platform.Services.OpenREC.label,
+                        hasAccount: true,
+                        isBroadCasting: false,
+                        displayTextContent: '@2525coco',
+                        accountUserName: 'ここ',
+                        accountURL: 'https://www.twitch.tv/infinity_mkds',
+                        accountIconImageURL: ''
+                    }
+                ]
+            },
+            {
+                userId: 6,
+                userHashTag: '#6790',
+                userMetaName: [],
+                userName: 'にゃぴさん',
+                platform: [
+                    {
+                        platformId: Platform.Services.OpenREC.serviceId,
+                        platformName: Platform.Services.OpenREC.label,
+                        hasAccount: true,
+                        isBroadCasting: true,
+                        displayTextContent: '@2525coco',
+                        accountUserName: 'ここ',
+                        accountURL: 'https://www.twitch.tv/infinity_mkds',
+                        accountIconImageURL: ''
+                    }
+                ]
+            },
