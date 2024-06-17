@@ -39,9 +39,14 @@ export const Services = {
         label: "TikTok",
         colorCode: '#FE2C55'
     },
+    Mildom: {
+        serviceId: 9,
+        label: "ミルダム",
+        colorCode: '#25F4EE'
+    },
     Other: {
         serviceId: 999,
         label: "その他",
-        colorCode: '#25F4EE'
+        colorCode: '#6f4b3e'
     },
 }

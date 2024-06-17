@@ -17,11 +17,12 @@ export default {
           Platform.Services.Twitch.label,
           Platform.Services.Whowatch.label,
           Platform.Services.Twitcasting.label,
+          Platform.Services.YouTubeLive.label,
           Platform.Services.LINEOpenChat.label,
           Platform.Services.TikTok.label,
           Platform.Services.Instagram.label,
-          Platform.Services.YouTubeLive.label,
           Platform.Services.Twitter.label,
+          Platform.Services.Mildom.label,
           Platform.Services.Other.label,
       ]
   }),
