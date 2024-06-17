@@ -33,9 +33,9 @@ export default {
 .cell {
     background-color: white;
     border-radius: 16px;
-    width: 358px;
+    width: 342px;
     height: 65px;
-    margin: 0 auto 16px auto;
+    margin: 0 16px 16px 16px;
     font-family: -apple-system, 'BlinkMacSystemFont', 'Hiragino Kaku Gothic ProN', 'メイリオ', Sans-Serif;
     border-radius: 16px;
     box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.34);

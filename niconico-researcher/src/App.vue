@@ -1,8 +1,15 @@
 <template>
   <div class="main_view">
     <NavigationBar />
-    <Carousel />
+    <CarouselArea />
+    <SearchForm />
+    <CategoryList />
     <div class="display_area">
+       <CastCell userName="無限" userAccountId="@infinity_mkds"/>
+       <CastCell userName="無限" userAccountId="@infinity_mkds"/>
+       <CastCell userName="無限" userAccountId="@infinity_mkds"/>
+       <CastCell userName="無限" userAccountId="@infinity_mkds"/>
+       <CastCell userName="無限" userAccountId="@infinity_mkds"/>
        <CastCell userName="無限" userAccountId="@infinity_mkds"/>
     </div>
   </div>
@@ -10,15 +17,18 @@
 
 <script>
 import NavigationBar from './components/NavigationBar.vue'
-import Carousel from './components/Carousel.vue'
+import CarouselArea from './components/CarouselArea.vue'
 import CastCell from './components/CastCell.vue'
-
+import SearchForm from './components/SearchForm.vue'
+import CategoryList from './components/CategoryList/CategoryList.vue'
 
 export default {
   name: 'App',
   components: {
     NavigationBar,
-    Carousel,
+    CarouselArea,
+    SearchForm,
+    CategoryList,
     CastCell
   }
 }
@@ -29,7 +39,6 @@ export default {
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 #app {

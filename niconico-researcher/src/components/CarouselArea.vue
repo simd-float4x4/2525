@@ -7,6 +7,7 @@
             <div class="carousel_indicator_dot"></div>
             <div class="carousel_indicator_dot"></div>
             <div class="carousel_indicator_dot"></div>
+            <div class="carousel_indicator_dot"></div>
         </div>
     </div>
 </template>
