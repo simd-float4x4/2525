@@ -1,10 +1,6 @@
 <template>
     <div class="cell">
-        <div class="icon"></div>
-        <div class="text-container">
-            <h2>{{ userName }}</h2>
-            <h3>{{ platform[0].displayTextContent }}</h3>
-        </div>
+        
     </div>
 </template>
 
@@ -24,7 +20,7 @@ let userPlatform = [
 export default {
   name: 'CastCell',
   data: () => ({
-    userId: 1,        
+    userId: 1,
     userHashTagid: '#7829',
     iconURL: '',
     userName: '無限',
