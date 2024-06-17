@@ -1,13 +1,17 @@
 <template>
-  <div class="display_container"></div>
+  <div class="display_container">
+    <CastCell userName="無限" userAccountId="@infinity_mkds"/>
+    <CastCell userName="無限" userAccountId="@infinity_mkds"/>
+  </div>
 </template>
 
 <script>
+import CastCell from './components/CastCell.vue'
 
 export default {
   name: 'App',
   components: {
-    
+    CastCell
   }
 }
 </script>
@@ -15,6 +19,8 @@ export default {
 <style>
 
 body {
+  margin: 0;
+  padding: 0;
   overflow: hidden;
 }
 
