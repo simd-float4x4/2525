@@ -22,7 +22,6 @@
     .carousel_indicator_area {
         width: 100%;
         height: 32px;
-        padding: 4px;
     }
 
     .carousel_indicators {
