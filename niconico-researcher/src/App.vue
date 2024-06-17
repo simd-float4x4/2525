@@ -1,9 +1,7 @@
 <template>
   <div class="main_view">
     <NavigationBar />
-    <div class="carousel_area">
-
-    </div>
+    <Carousel />
     <div class="display_area">
        <CastCell userName="無限" userAccountId="@infinity_mkds"/>
     </div>
@@ -11,13 +9,16 @@
 </template>
 
 <script>
-import CastCell from './components/CastCell.vue'
 import NavigationBar from './components/NavigationBar.vue'
+import Carousel from './components/Carousel.vue'
+import CastCell from './components/CastCell.vue'
+
 
 export default {
   name: 'App',
   components: {
     NavigationBar,
+    Carousel,
     CastCell
   }
 }
@@ -46,14 +47,5 @@ body {
   height: 2000px;
   margin: 0 auto;
 }
-
-.carousel_area {
-  background-color: darkgray;
-  width: 390px;
-  height: 195px;
-  margin-bottom: 16px;
-}
-
-
 
 </style>
