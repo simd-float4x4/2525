@@ -1,7 +1,7 @@
 <template>
-    <div class="single_category_tab">
+    <div class="single_category_tab" v-for="(item, key) in platformlist" :key="key">
         <div class="category_name">
-            {{ platformName }}
+            {{ item }}
         </div>
         <div class="category_underline"></div>
     </div>
@@ -13,7 +13,17 @@ import * as Platform from "/Users/asobu_dev/Desktop/Project/System/niconicoSearc
 export default {
   name: 'CategoryName',
   data: () => ({
-      platformName: Platform.Services.LINEOpenChat.label
+      platformlist: [
+          Platform.Services.Twitch.label,
+          Platform.Services.Whowatch.label,
+          Platform.Services.Twitcasting.label,
+          Platform.Services.LINEOpenChat.label,
+          Platform.Services.TikTok.label,
+          Platform.Services.Instagram.label,
+          Platform.Services.YouTubeLive.label,
+          Platform.Services.Twitter.label,
+          Platform.Services.Other.label,
+      ]
   }),
 }
 </script>

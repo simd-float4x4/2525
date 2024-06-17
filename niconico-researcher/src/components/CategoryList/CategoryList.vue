@@ -1,14 +1,6 @@
 <template>
     <div class="category_list_area">
         <SingleCategory />
-        <SingleCategory />
-        <SingleCategory />
-        <SingleCategory />
-        <SingleCategory />
-        <SingleCategory />
-        <SingleCategory />
-        <SingleCategory />
-        <SingleCategory />
     </div>
 </template>
 

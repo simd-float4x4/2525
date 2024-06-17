@@ -5,18 +5,21 @@
     <SearchForm />
     <CategoryList />
     <div class="display_area">
-       <CastCell userName="無限" userAccountId="@infinity_mkds"/>
-       <CastCell userName="無限" userAccountId="@infinity_mkds"/>
-       <CastCell userName="無限" userAccountId="@infinity_mkds"/>
-       <CastCell userName="無限" userAccountId="@infinity_mkds"/>
-       <CastCell userName="無限" userAccountId="@infinity_mkds"/>
-       <CastCell userName="無限" userAccountId="@infinity_mkds"/>
-       <CastCell userName="無限" userAccountId="@infinity_mkds"/>
-       <CastCell userName="無限" userAccountId="@infinity_mkds"/>
-       <CastCell userName="無限" userAccountId="@infinity_mkds"/>
-       <CastCell userName="無限" userAccountId="@infinity_mkds"/>
-       <CastCell userName="無限" userAccountId="@infinity_mkds"/>
-       <CastCell userName="無限" userAccountId="@infinity_mkds"/>
+       <CastCell />
+       <CastCell />
+       <CastCell />
+       <CastCell />
+       <CastCell />
+       <CastCell />
+       <CastCell />
+       <CastCell />
+       <CastCell />
+       <CastCell />
+       <CastCell />
+       <CastCell />
+       <CastCell />
+       <CastCell />
+       <CastCell />
     </div>
   </div>
 </template>
