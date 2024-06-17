@@ -3,6 +3,7 @@
         <div class="category_name">
             {{ platformName }}
         </div>
+        <div class="category_underline"></div>
     </div>
 </template>
 
@@ -12,23 +13,30 @@ import * as Platform from "/Users/asobu_dev/Desktop/Project/System/niconicoSearc
 export default {
   name: 'CategoryName',
   data: () => ({
-      platformName: Platform.Services.Twitch.label
+      platformName: Platform.Services.LINEOpenChat.label
   }),
 }
 </script>
 
 <style>
-    .single_category_tab {
-        width: 78px;
-        min-width: 78px;
-        height: 48px;
-        display: flex;
-        background-color: blue;
-    }
-
     .category_name {
-        background-color: red;
+        min-width: 78px;
+        font-weight: bold;
+        white-space: nowrap;
         height: 25px;
         margin: 0 auto;
+    }
+
+    .single_category_tab {
+        height: 36px;
+        margin-right: 8px;
+        display: inline-block;
+    }
+
+    .category_underline {
+        width: 40px;
+        margin: 0 auto;
+        height: 2px;
+        background-color: black;
     }
 </style>

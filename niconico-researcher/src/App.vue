@@ -11,6 +11,12 @@
        <CastCell userName="無限" userAccountId="@infinity_mkds"/>
        <CastCell userName="無限" userAccountId="@infinity_mkds"/>
        <CastCell userName="無限" userAccountId="@infinity_mkds"/>
+       <CastCell userName="無限" userAccountId="@infinity_mkds"/>
+       <CastCell userName="無限" userAccountId="@infinity_mkds"/>
+       <CastCell userName="無限" userAccountId="@infinity_mkds"/>
+       <CastCell userName="無限" userAccountId="@infinity_mkds"/>
+       <CastCell userName="無限" userAccountId="@infinity_mkds"/>
+       <CastCell userName="無限" userAccountId="@infinity_mkds"/>
     </div>
   </div>
 </template>

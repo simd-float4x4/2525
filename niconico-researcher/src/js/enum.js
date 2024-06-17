@@ -17,7 +17,7 @@ export const Services = {
     },
     LINEOpenChat: {
         serviceId: 5,
-        label: "LINEオープンチャット"
+        label: "オープンチャット"
     },
     Twitter: {
         serviceId: 6,
