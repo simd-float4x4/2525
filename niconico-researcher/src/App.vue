@@ -1,7 +1,8 @@
 <template>
   <div class="main_view">
-    <div class="navigation_bar">
-      <span class="app_title">Insert App Title Here</span>
+    <NavigationBar />
+    <div class="carousel_area">
+
     </div>
     <div class="display_area">
        <CastCell userName="無限" userAccountId="@infinity_mkds"/>
@@ -11,10 +12,12 @@
 
 <script>
 import CastCell from './components/CastCell.vue'
+import NavigationBar from './components/NavigationBar.vue'
 
 export default {
   name: 'App',
   components: {
+    NavigationBar,
     CastCell
   }
 }
@@ -44,21 +47,13 @@ body {
   margin: 0 auto;
 }
 
-.navigation_bar {
-  position: relative;
-  background-color: #252525;
-  width: 100%;
-  height: 56px;
+.carousel_area {
+  background-color: darkgray;
+  width: 390px;
+  height: 195px;
   margin-bottom: 16px;
-  box-shadow: 0px 0px 10px -10px rgba(0, 0, 0, 0.34);
 }
 
-.app_title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  color: #F7F7F7;
-}
+
 
 </style>
