@@ -64,9 +64,9 @@
     }
 
     .carousel_indicator_dot {
-        width: 12px;
-        height: 12px;
-        margin: 4px;
+        width: 9px;
+        height: 9px;
+        margin: 8px;
         border-radius: 50%;
         background-color: darkgray;
     }
