@@ -1,5 +1,5 @@
 <template>
-    <div class="search_form_view">
+    <div class="search_form_view" contenteditable="true">
         <div class="search_form_input_area">
             <i class="fa-solid fa-magnifying-glass"></i>
             検索したい配信者の名前を入力

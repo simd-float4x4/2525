@@ -9,7 +9,7 @@
     </div>
     <div class="carousel_indicator_area">
         <div class="carousel_indicators">
-            <div class="carousel_indicator_dot"></div>
+            <div class="carousel_indicator_dot activated"></div>
             <div class="carousel_indicator_dot"></div>
             <div class="carousel_indicator_dot"></div>
             <div class="carousel_indicator_dot"></div>
@@ -69,5 +69,9 @@
         margin: 8px;
         border-radius: 50%;
         background-color: darkgray;
+    }
+
+    .activated {
+        background-color: green;
     }
 </style>
