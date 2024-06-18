@@ -7,11 +7,11 @@
                     <i class="fa-solid fa-video fa-fade"></i>
                 </div>
             </div>
-            <div class="user_seed_tag">#3322</div>
+            <div class="user_seed_tag">{{ userData.userHashTag }}</div>
         </div>
         <div class="cell_user_name_area">
-            <div class="user_name">{{ userName }}</div>
-            <div class="user_id_label">aabbbb</div>
+            <div class="user_name">{{ userData.userName }}</div>
+            <div class="user_id_label"> {{ userData.platform[0].displayTextContent }} </div>
         </div>
         <div class="cell_config_area">
             <div class="setting_option">
@@ -24,29 +24,11 @@
 <script>
 import * as Platform from "/Users/asobu_dev/Desktop/Project/System/niconicoSearcher/niconico-researcher/src/js/enum.js";
 
-let userPlatform = [
-    {
-        platformName: Platform.Services.Twitch.text,
-        hasAccount: true,
-        isBroadCasting: false,
-        displayTextContent: '@infinity_mkds',
-        accountURL: ''
-    }
-]
-
 export default {
   name: 'CastCell',
   props: {
-      userName: String
-  },
-  data: () => ({
-    userId: 1,
-    userHashTagid: '#7829',
-    userMetaTag: '',
-    iconURL: '',
-    userNameData: '無限',
-    platform: userPlatform
-  }),
+      userData: Array
+  }
 }
 </script>
 

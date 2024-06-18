@@ -1,6 +1,6 @@
 <template>
     <div class="pagination">
-        <CastCell v-for="(cell, idx) in displayCells" :key="idx" :userName="cell" />
+        <CastCell v-for="(cell, idx) in displayCells" :key="idx" :userData="cell" />
         <div class="page-btns">
             <page-button @changePage="changePage" v-for="n in pageNum" 
                 :key="n" 

@@ -1,0 +1,17 @@
+{
+    userId: 1,
+    userHashTag: '#3322',
+    userMetaName: ['かつき', 'ににまる', 'まんちょ'],
+    userName: '岩崎かつき',
+    platform: {
+        [
+            platformName: Platform.Services.Twitch.text,
+            hasAccount: true,
+            isBroadCasting: false,
+            displayTextContent: '@220niconico',
+            accountUserName: '',
+            accountURL: '',
+            accountIconImageURL: ''
+        ]
+    }
+}

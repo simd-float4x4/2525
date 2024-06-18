@@ -22,6 +22,7 @@ import SearchForm from './components/SearchForm.vue'
 import CategoryList from './components/CategoryList/CategoryList.vue'
 import Pagination from './components/Pagination/Pagination.vue'
 import FooterView from './components/FooterView.vue'
+import * as Platform from "/Users/asobu_dev/Desktop/Project/System/niconicoSearcher/niconico-researcher/src/js/enum.js"
 
 export default {
   name: 'App',
@@ -37,9 +38,57 @@ export default {
   data() {
       return {
           Cells: [
-            'ぞっくん',
-            'ねむこ',
-            '横山緑（暗黒放送）',
+            {
+                userId: 1,
+                userHashTag: '#3322',
+                userMetaName: ['かつき', 'ににまる', 'まんちょ'],
+                userName: '岩崎かつき',
+                platform: [
+                    {
+                        platformName: Platform.Services.Twitch.text,
+                        hasAccount: true,
+                        isBroadCasting: false,
+                        displayTextContent: '@220niconico',
+                        accountUserName: 'ににまる',
+                        accountURL: '',
+                        accountIconImageURL: ''
+                    }
+                ]
+            },
+            {
+                userId: 2,
+                userHashTag: '#8729',
+                userMetaName: ['笑原心恋', '心恋', 'ここ'],
+                userName: '心恋(ここ)',
+                platform: [
+                    {
+                        platformName: Platform.Services.Twitch.text,
+                        hasAccount: true,
+                        isBroadCasting: true,
+                        displayTextContent: '@2525coco',
+                        accountUserName: 'ここ',
+                        accountURL: '',
+                        accountIconImageURL: ''
+                    }
+                ]
+            },
+            {
+                userId: 3,
+                userHashTag: '#2891',
+                userMetaName: ['ねむこ'],
+                userName: 'ねむこ',
+                platform: [
+                    {
+                        platformName: Platform.Services.Twitch.text,
+                        hasAccount: true,
+                        isBroadCasting: false,
+                        displayTextContent: '@nemuko',
+                        accountUserName: 'ねむこ＠へるぷ垢',
+                        accountURL: '',
+                        accountIconImageURL: ''
+                    }
+                ]
+            },
           ],
       }
   }

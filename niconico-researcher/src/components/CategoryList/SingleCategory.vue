@@ -27,11 +27,11 @@ export default {
           {text: Platform.Services.Twitch.label, color: "TwitchServiceColor", icon: Platform.Services.Twitch.icon},
           {text: Platform.Services.Whowatch.label, color: "WhowatchServiceColor", serviceId: 2},
           {text: Platform.Services.Twitcasting.label, color: "TwitCastingServiceColor", serviceId: 3},
+          {text: Platform.Services.Twitter.label, color: "TwitterColor", icon: Platform.Services.Twitter.icon, serviceId: 6},
           {text: Platform.Services.YouTubeLive.label, color: "YouTubeLiveColor", icon: Platform.Services.YouTubeLive.icon},
           {text: Platform.Services.LINEOpenChat.label, color: "LINEOpenChatColor", icon: Platform.Services.LINEOpenChat.icon},
           {text: Platform.Services.TikTok.label, color: "TikTokColor", icon: Platform.Services.TikTok.icon},
           {text: Platform.Services.Instagram.label, color: "InstagramColor", icon: Platform.Services.Instagram.icon},
-          {text: Platform.Services.Twitter.label, color: "TwitterColor", icon: Platform.Services.Twitter.icon, serviceId: 6},
           {text: Platform.Services.Other.label, color: "OtherServiceColor", icon: Platform.Services.Other.icon},
       ]
   }),
