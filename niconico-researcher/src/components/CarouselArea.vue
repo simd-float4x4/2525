@@ -23,11 +23,11 @@
         width: 390px;
         height: 195px;
         margin-bottom: 8px;
+        position: relative;
     }
 
     .carousel {
         width: 50px;
-        position: relative;
     }
 
     .left_button {
