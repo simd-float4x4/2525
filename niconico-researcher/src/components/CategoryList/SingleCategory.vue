@@ -1,11 +1,21 @@
 <template>
-    <div class="single_category_tab" v-for="(item, key) in platformlist" :key="key" v-bind:class="item.color">
-        <div class="category_name">
-            {{ item.text }}
+    <div class="single_category_tab" v-for="(item, key) in platformlist" :key="key">
+        <div v-if="item.serviceId === 2" class="category_name">
+            ふ
         </div>
-        <div class="category_underline"></div>
+        <div v-else-if="item.serviceId === 3" class="category_name">
+            ツ
+        </div>
+        <div v-else-if="item.serviceId === 6" class="category_name">
+            X
+        </div>
+        <div v-else class="category_name">
+            <i v-bind:class="item.icon"></i>
+        </div>
+        <div class="category_underline" v-bind:class="item.color"></div>
     </div>
 </template>
+
 
 <script>
 import * as Platform from "/Users/asobu_dev/Desktop/Project/System/niconicoSearcher/niconico-researcher/src/js/enum.js";
@@ -14,16 +24,15 @@ export default {
   name: 'CategoryName',
   data: () => ({
       platformlist: [
-          {text: Platform.Services.Twitch.label, color: "TwitchServiceColor"},
-          {text: Platform.Services.Whowatch.label, color: "WhowatchServiceColor"},
-          {text: Platform.Services.Twitcasting.label, color: "TwitCastingServiceColor"},
-          {text: Platform.Services.YouTubeLive.label, color: "YouTubeLiveColor"},
-          {text: Platform.Services.LINEOpenChat.label, color: "LINEOpenChatColor"},
-          {text: Platform.Services.TikTok.label, color: "TikTokColor"},
-          {text: Platform.Services.Instagram.label, color: "InstagramColor"},
-          {text: Platform.Services.Twitter.label, color: "TwitterColor"},
-          {text: Platform.Services.Mildom.label, color: "MildomColor"},
-          {text: Platform.Services.Other.label, color: "OtherServiceColor"},
+          {text: Platform.Services.Twitch.label, color: "TwitchServiceColor", icon: Platform.Services.Twitch.icon},
+          {text: Platform.Services.Whowatch.label, color: "WhowatchServiceColor", serviceId: 2},
+          {text: Platform.Services.Twitcasting.label, color: "TwitCastingServiceColor", serviceId: 3},
+          {text: Platform.Services.YouTubeLive.label, color: "YouTubeLiveColor", icon: Platform.Services.YouTubeLive.icon},
+          {text: Platform.Services.LINEOpenChat.label, color: "LINEOpenChatColor", icon: Platform.Services.LINEOpenChat.icon},
+          {text: Platform.Services.TikTok.label, color: "TikTokColor", icon: Platform.Services.TikTok.icon},
+          {text: Platform.Services.Instagram.label, color: "InstagramColor", icon: Platform.Services.Instagram.icon},
+          {text: Platform.Services.Twitter.label, color: "TwitterColor", icon: Platform.Services.Twitter.icon, serviceId: 6},
+          {text: Platform.Services.Other.label, color: "OtherServiceColor", icon: Platform.Services.Other.icon},
       ]
   }),
 }
@@ -62,16 +71,12 @@ export default {
         background-color: #0F1419;
     }
 
-    .MildomColor {
-        background-color: #25F4EE;
-    }
-
     .OtherServiceColor {
         background-color: #6f4b3e;
     }
 
     .category_name {
-        min-width: 78px;
+        min-width: 40px;
         font-weight: bold;
         white-space: nowrap;
         height: 25px;
@@ -87,9 +92,9 @@ export default {
     }
 
     .category_underline {
-        width: 40px;
+        width: 20px;
         margin: 0 auto;
         height: 2px;
-        background-color: black;
     }
+
 </style>
