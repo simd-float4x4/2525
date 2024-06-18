@@ -1,6 +1,11 @@
 <template>
     <div class="carousel_area">
-
+        <div class="carousel left_button">
+            <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <div class="carousel right_button">
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
     </div>
     <div class="carousel_indicator_area">
         <div class="carousel_indicators">
@@ -18,6 +23,31 @@
         width: 390px;
         height: 195px;
         margin-bottom: 8px;
+    }
+
+    .carousel {
+        width: 50px;
+        position: relative;
+    }
+
+    .left_button {
+        margin-left: 0px;
+        height: 195px;
+        position: absolute;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .right_button {
+        margin-right: 0px;
+        height: 195px;
+        position: absolute;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .carousel_indicator_area {
