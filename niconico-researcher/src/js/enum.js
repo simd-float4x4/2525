@@ -1,52 +1,42 @@
 export const Services = {
     Twitch: {
         serviceId: 1,
-        label: "Twitch",
-        colorCode: '#6441a5'
+        label: "Twitch"
     },
     Whowatch: {
         serviceId: 2,
-        label: "ふわっち",
-        colorCode: '#Fb5824'
+        label: "ふわっち"
     },
     Twitcasting: {
         serviceId: 3,
-        label: "ツイキャス",
-        colorCode: '#F9F9F9'
+        label: "ツイキャス"
     },
     YouTubeLive: {
         serviceId: 4,
-        label: "YouTubeライブ",
-        colorCode: '#C4302B'
+        label: "YouTubeライブ"
     },
     LINEOpenChat: {
         serviceId: 5,
-        label: "オープンチャット",
-        colorCode: '#06C755'
+        label: "オープンチャット"
     },
     Twitter: {
         serviceId: 6,
-        label: "X/スペース",
-        colorCode: '#0F1419'
+        label: "X/スペース"
     },
     Instagram: {
         serviceId: 7,
-        label: "Instagram",
-        colorCode: '#CF2E92'
+        label: "Instagram"
     },
     TikTok: {
         serviceId: 8,
-        label: "TikTok",
-        colorCode: '#FE2C55'
+        label: "TikTok"
     },
     Mildom: {
         serviceId: 9,
-        label: "ミルダム",
-        colorCode: '#25F4EE'
+        label: "ミルダム"
     },
     Other: {
         serviceId: 999,
-        label: "その他",
-        colorCode: '#6f4b3e'
+        label: "その他"
     },
 }
