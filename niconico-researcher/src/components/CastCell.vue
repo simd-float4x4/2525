@@ -3,7 +3,9 @@
         <div class="cell_user_image_area">
             <div class="user_icon_container">
                 <div class="icon user_image_icon"></div>
-                <div class="icon user_is_broadcasting_icon"></div>
+                <div class="icon user_is_broadcasting_icon">
+                    <i class="fa-solid fa-video fa-fade"></i>
+                </div>
             </div>
             <div class="user_seed_tag">#3322</div>
         </div>
@@ -12,7 +14,9 @@
             <div class="user_id_label">aabbbb</div>
         </div>
         <div class="cell_config_area">
-            <div class="setting_option">a</div>
+            <div class="setting_option">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
         </div>        
     </div>
 </template>
@@ -71,10 +75,16 @@ export default {
 
 .user_is_broadcasting_icon {
     background-color: red;
+    color: white;
     width: 16px;
     height: 16px;
+    font-size: 8px;
     bottom: 0;
     right: 0;
+}
+
+.user_is_broadcasting_icon i {
+    padding: 4px;
 }
 
 .user_seed_tag {
