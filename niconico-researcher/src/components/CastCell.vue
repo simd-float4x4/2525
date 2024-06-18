@@ -10,7 +10,7 @@
             <div class="user_seed_tag">#3322</div>
         </div>
         <div class="cell_user_name_area">
-            <div class="user_name">ああああああああああああ</div>
+            <div class="user_name">{{ userName }}</div>
             <div class="user_id_label">aabbbb</div>
         </div>
         <div class="cell_config_area">
@@ -36,12 +36,15 @@ let userPlatform = [
 
 export default {
   name: 'CastCell',
+  props: {
+      userName: String
+  },
   data: () => ({
     userId: 1,
     userHashTagid: '#7829',
     userMetaTag: '',
     iconURL: '',
-    userName: '無限',
+    userNameData: '無限',
     platform: userPlatform
   }),
 }

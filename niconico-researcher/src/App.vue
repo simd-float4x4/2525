@@ -5,21 +5,10 @@
     <SearchForm />
     <CategoryList />
     <div class="display_area">
-       <CastCell />
-       <CastCell />
-       <CastCell />
-       <CastCell />
-       <CastCell />
-       <CastCell />
-       <CastCell />
-       <CastCell />
-       <CastCell />
-       <CastCell />
-       <CastCell />
-       <CastCell />
-       <CastCell />
-       <CastCell />
-       <CastCell />
+       <Pagination 
+        :Cells="Cells"
+        :CellNumPerPage="20"
+        />
     </div>
     <FooterView />
   </div>
@@ -31,6 +20,7 @@ import CarouselArea from './components/CarouselArea.vue'
 import CastCell from './components/CastCell.vue'
 import SearchForm from './components/SearchForm.vue'
 import CategoryList from './components/CategoryList/CategoryList.vue'
+import Pagination from './components/Pagination/Pagination.vue'
 import FooterView from './components/FooterView.vue'
 
 export default {
@@ -41,7 +31,18 @@ export default {
     SearchForm,
     CategoryList,
     CastCell,
+    Pagination,
     FooterView
+  },
+  data() {
+      return {
+          Cells: [],
+      }
+  },
+  created() {
+      for (let i = 1; i <= 25; i++) {
+          this.Cells.push('CastCell');
+      }
   }
 }
 </script>
@@ -51,6 +52,7 @@ export default {
 body {
   margin: 0;
   padding: 0;
+  background-color: #252525;
 }
 
 #app {
@@ -65,8 +67,10 @@ body {
 .main_view {
   background-color: #F7F7F7;
   width: 390px;
-  height: 2000px;
+  height: auto;
   margin: 0 auto;
+  padding-bottom: 270px;
+  position: relative;
 }
 
 </style>

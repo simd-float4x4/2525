@@ -10,5 +10,8 @@
         width: 100%;
         height: 180px;
         color: white;
+        margin-bottom: 0;
+        position: absolute;
+        bottom: 0;
     }
 </style>
