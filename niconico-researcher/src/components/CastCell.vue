@@ -3,7 +3,7 @@
         <div class="cell_user_image_area">
             <div class="user_icon_container">
                 <div class="icon user_image_icon"></div>
-                <div class="icon user_is_broadcasting_icon">
+                <div v-if="userData.platform[0].isBroadCasting == true" class="icon user_is_broadcasting_icon">
                     <i class="fa-solid fa-video fa-fade"></i>
                 </div>
             </div>
