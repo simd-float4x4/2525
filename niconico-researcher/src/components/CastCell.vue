@@ -1,5 +1,19 @@
 <template>
     <div class="cell">
+        <div class="cell_user_image_area">
+            <div class="user_icon_container">
+                <div class="icon user_image_icon"></div>
+                <div class="icon user_is_broadcasting_icon"></div>
+            </div>
+            <div class="user_seed_tag">#3322</div>
+        </div>
+        <div class="cell_user_name_area">
+            <div class="user_name">ああああああああああああ</div>
+            <div class="user_id_label">aabbbb</div>
+        </div>
+        <div class="cell_config_area">
+            <div class="setting_option">a</div>
+        </div>        
     </div>
 </template>
 
@@ -21,6 +35,7 @@ export default {
   data: () => ({
     userId: 1,
     userHashTagid: '#7829',
+    userMetaTag: '',
     iconURL: '',
     userName: '無限',
     platform: userPlatform
@@ -29,6 +44,83 @@ export default {
 </script>
 
 <style scoped>
+
+.cell_user_image_area {
+    
+}
+
+.user_icon_container {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.icon {
+    border-radius: 50%;
+    position: absolute;
+}
+
+.user_image_icon {
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    top: 0;
+    left: 0;
+}
+
+.user_is_broadcasting_icon {
+    background-color: red;
+    width: 16px;
+    height: 16px;
+    bottom: 0;
+    right: 0;
+}
+
+.user_seed_tag {
+    width: 40px;
+    margin-top: 8px; 
+    font-size: 12px;
+}
+
+.cell_user_name_area {
+    width: 320px;
+    height: 100%;
+    margin: 16px 0 16px 16px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.user_name {
+    width: 100%;
+    height: 50%;
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+}
+
+.user_id_label {
+    width: 100%;
+    height: 50%;
+    font-size: 14px;
+    color: gray;
+}
+
+.cell_config_area {
+    width: 40px;
+    height: 100%;
+    margin: 16px 16px 16px 0;
+    margin: left;
+}
+
+.setting_option {
+    width: 100%;
+    text-align: right;
+    top: 0;
+    right: 0;
+}
+
 
 .cell {
     background-color: white;
@@ -43,32 +135,4 @@ export default {
     align-items: center;
     padding: 8px;
 }
-
-.icon {
-    width: 32px;
-    height: 32px;
-    background-color: black;
-    border-radius: 16px;
-    margin: 8px;
-}
-
-h2 {
-    width: 260px;
-    text-align: left;
-    line-height: 30px;
-}
-
-h3 {
-    font-weight: bold;
-    width: 260px;
-    color: gray;
-    text-align: left;
-    line-height: 20px;
-}
-
- .text-container {
-    display: flex;
-    flex-direction: column;
- }
-
 </style>
