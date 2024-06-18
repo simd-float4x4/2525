@@ -10,7 +10,6 @@
         background-color: #252525;
         width: 100%;
         height: 56px;
-        margin-bottom: 16px;
         box-shadow: 0px 0px 10px -10px rgba(0, 0, 0, 0.34);
     }
 
