@@ -36,12 +36,11 @@ export default {
   },
   data() {
       return {
-          Cells: [],
-      }
-  },
-  created() {
-      for (let i = 1; i <= 25; i++) {
-          this.Cells.push('CastCell');
+          Cells: [
+            'ぞっくん',
+            'ねむこ',
+            '横山緑（暗黒放送）',
+          ],
       }
   }
 }
