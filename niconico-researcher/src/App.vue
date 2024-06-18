@@ -21,6 +21,7 @@
        <CastCell />
        <CastCell />
     </div>
+    <FooterView />
   </div>
 </template>
 
@@ -30,6 +31,7 @@ import CarouselArea from './components/CarouselArea.vue'
 import CastCell from './components/CastCell.vue'
 import SearchForm from './components/SearchForm.vue'
 import CategoryList from './components/CategoryList/CategoryList.vue'
+import FooterView from './components/FooterView.vue'
 
 export default {
   name: 'App',
@@ -38,7 +40,8 @@ export default {
     CarouselArea,
     SearchForm,
     CategoryList,
-    CastCell
+    CastCell,
+    FooterView
   }
 }
 </script>
