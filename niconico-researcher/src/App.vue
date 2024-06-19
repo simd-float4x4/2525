@@ -145,28 +145,4 @@ body {
   position: relative;
 }
 
-.page-btn {
-    margin: 0 8px;
-    button {
-        width: 32px;
-        height: 32px;
-        border: none;
-        outline: none;
-        background-color: #f6f6f6;
-        box-shadow: 0 2px 4px rgba($color: #000000, $alpha: 0.15);
-        cursor: pointer;
-        transition: 0.1s;
-
-        &:hover {
-            background-color: #f2f2f2;
-            box-shadow: 0 2px 4px rgba($color: #000000, $alpha: 0.25);
-        }
-    }
-
-    .active {
-        color: #fff;
-        background-color: #bfbfbf;
-    }
-}
-
 </style>

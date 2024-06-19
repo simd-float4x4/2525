@@ -1,6 +1,6 @@
 <template>
     <div class="page-btn">
-        <button @click="btnPressed"
+        <button class="page-btn-item" @click="btnPressed"
             :class="{active: isCurrentPage}"
         >{{ pageNumber }} </button>
     </div>
@@ -24,3 +24,26 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+    button {
+        margin: 0;
+        padding: 0;
+        background: none;
+        border: none;
+        border-radius: 0;
+        outline: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    .page-btn {
+        margin: 8px;
+        .active {
+            background-color: black;
+            color: white;
+        }
+    }
+
+</style>

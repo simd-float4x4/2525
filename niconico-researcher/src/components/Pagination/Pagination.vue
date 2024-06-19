@@ -50,3 +50,11 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+    .page-btns {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+</style>
