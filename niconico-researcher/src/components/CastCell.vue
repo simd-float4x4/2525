@@ -27,7 +27,7 @@ import * as Platform from "../js/enum.js";
 export default {
   name: 'CastCell',
   props: {
-      userData: Array
+      userData: Object
   }
 }
 </script>

@@ -39,10 +39,14 @@ export default {
     }
 
     .page-btn {
-        margin: 8px;
+        padding: 8px;
         .active {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
             background-color: black;
             color: white;
+            padding: 8px;
         }
     }
 
