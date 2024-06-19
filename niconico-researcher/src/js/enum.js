@@ -41,6 +41,15 @@ export const Services = {
         serviceId: 9,
         label: "ミルダム"
     },
+    All: {
+        serviceId: 997,
+        label: "ALL"
+    },
+    NowStreaming: {
+        serviceId: 1,
+        label: "配信中",
+        icon: 'fa-solid fa-video'
+    },
     Other: {
         serviceId: 999,
         label: "その他",

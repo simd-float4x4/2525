@@ -5,7 +5,10 @@
              @mouseover="hoveredIndex = key" 
              @mouseleave="hoveredIndex = null"
         >
-            <div v-if="item.serviceId === 2" class="category_name">
+            <div v-if="item.serviceId === 997" class="category_name">
+                ALL
+            </div>
+            <div v-else-if="item.serviceId === 2" class="category_name">
                 ふ
             </div>
             <div v-else-if="item.serviceId === 3" class="category_name">
@@ -30,6 +33,8 @@ export default {
   name: 'CategoryName',
   data: () => ({
       platformlist: [
+          {text: Platform.Services.All.label, color: "AllServiceColor", serviceId: 997},
+          {text: Platform.Services.NowStreaming.label, color: "NowStreamingColor", icon: Platform.Services.NowStreaming.icon},
           {text: Platform.Services.Twitch.label, color: "TwitchServiceColor", icon: Platform.Services.Twitch.icon},
           {text: Platform.Services.Whowatch.label, color: "WhowatchServiceColor", serviceId: 2},
           {text: Platform.Services.Twitcasting.label, color: "TwitCastingServiceColor", serviceId: 3},
@@ -41,6 +46,8 @@ export default {
           {text: Platform.Services.Other.label, color: "OtherServiceColor", icon: Platform.Services.Other.icon},
       ],
       items: [
+            { color: '#BAA898' },
+            { color: 'red' },
             { color: '#6441a5' },
             { color: '#fb5824' },
             { color: '#0273ff' },
@@ -105,6 +112,14 @@ export default {
         width: 20px;
         height: 2px;
         margin: 0px auto 8px auto;
+    }
+
+    .AllServiceColor {
+        background-color: #BAA898;
+    }
+
+    .NowStreamingColor {
+        background-color: red;
     }
 
     .TwitchServiceColor {
