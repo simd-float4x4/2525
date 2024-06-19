@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import * as Platform from "/Users/asobu_dev/Desktop/Project/System/niconicoSearcher/niconico-researcher/src/js/enum.js";
+import * as Platform from "../js/enum.js";
 
 export default {
   name: 'CastCell',
@@ -53,9 +53,10 @@ export default {
 .user_image_icon {
     width: 40px;
     height: 40px;
-    background-color: black;
     top: 0;
     left: 0;
+    background-image: url('../assets/image/user_icon_default.png');
+    background-size: cover;
 }
 
 .user_is_broadcasting_icon {
