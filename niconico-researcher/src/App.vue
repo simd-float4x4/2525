@@ -67,8 +67,8 @@ export default {
                         isBroadCasting: true,
                         displayTextContent: '@2525coco',
                         accountUserName: 'ここ',
-                        accountURL: '',
-                        accountIconImageURL: ''
+                        accountURL: 'https://www.twitch.tv/infinity_mkds',
+                        accountIconImageURL: 'niconico-researcher/src/assets/image/sample_user_01.jpeg'
                     }
                 ]
             },
@@ -84,8 +84,8 @@ export default {
                         isBroadCasting: false,
                         displayTextContent: '@nemuko',
                         accountUserName: 'ねむこ＠へるぷ垢',
-                        accountURL: '',
-                        accountIconImageURL: ''
+                        accountURL: 'https://www.twitch.tv/infinity_mkds',
+                        accountIconImageURL: 'niconico-researcher/src/assets/image/sample_user_02.jpeg'
                     }
                 ]
             },
@@ -108,8 +108,8 @@ export default {
                           isBroadCasting: false,
                           displayTextContent: '@nemuko',
                           accountUserName: i,
-                          accountURL: '',
-                          accountIconImageURL: ''
+                          accountURL: 'https://www.twitch.tv/infinity_mkds',
+                          accountIconImageURL: 'niconico-researcher/src/assets/image/sample_user_03.jpeg'
                       }
                   ]
               }
