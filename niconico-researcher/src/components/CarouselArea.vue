@@ -5,7 +5,6 @@
         class="carousel left_button">
             <i class="fa-solid fa-chevron-left"></i>
         </div>
-        {{ imageArray[currentCarouselNumber] }}
         <div
         @click="clickRight"
         class="carousel right_button">
@@ -14,10 +13,10 @@
     </div>
     <div class="carousel_indicator_area">
         <div class="carousel_indicators">
-            <div class="carousel_indicator_dot activated"></div>
-            <div class="carousel_indicator_dot"></div>
-            <div class="carousel_indicator_dot"></div>
-            <div class="carousel_indicator_dot"></div>
+            <div v-for="(slide, index) in carousels">
+                <div v-if="index==currentCarouselNumber" class="carousel_indicator_dot activated"></div>
+                <div v-else class="carousel_indicator_dot"></div>
+            </div>
         </div>
     </div>
 </template>
@@ -27,8 +26,8 @@
         name: 'CarouselArea',
         data: () => {
             return {
-                carouselCount: 4,
-                imageArray: ['image1', 'image2', 'image3', 'image4'],
+                carouselCount: 5,
+                carousels: ['image1', '', 'image2', 'image3', 'image4'],
                 currentCarouselNumber: 0,
             };
         },
@@ -38,14 +37,12 @@
                 if (this.currentCarouselNumber < 0) {
                     this.currentCarouselNumber = this.carouselCount - 1;
                 }
-                console.log('now: ', this.currentCarouselNumber);
             },
             clickRight() {
                 this.currentCarouselNumber += 1;
                 if (this.currentCarouselNumber > this.carouselCount - 1) {
                     this.currentCarouselNumber = 0;
                 }
-                console.log('now: ', this.currentCarouselNumber);
             }
         }
     }
