@@ -76,6 +76,10 @@ export default {
     width: 40px;
     margin-top: 8px; 
     font-size: 12px;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
 }
 
 .cell_user_name_area {
