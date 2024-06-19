@@ -1,9 +1,14 @@
 <template>
     <div class="carousel_area">
-        <div class="carousel left_button">
+        <div 
+        @click="clickLeft"
+        class="carousel left_button">
             <i class="fa-solid fa-chevron-left"></i>
         </div>
-        <div class="carousel right_button">
+        {{ imageArray[currentCarouselNumber] }}
+        <div
+        @click="clickRight"
+        class="carousel right_button">
             <i class="fa-solid fa-chevron-right"></i>
         </div>
     </div>
@@ -16,6 +21,35 @@
         </div>
     </div>
 </template>
+
+<script>
+    export default {
+        name: 'CarouselArea',
+        data: () => {
+            return {
+                carouselCount: 4,
+                imageArray: ['image1', 'image2', 'image3', 'image4'],
+                currentCarouselNumber: 0,
+            };
+        },
+        methods: {
+            clickLeft() {
+                this.currentCarouselNumber -= 1;
+                if (this.currentCarouselNumber < 0) {
+                    this.currentCarouselNumber = this.carouselCount - 1;
+                }
+                console.log('now: ', this.currentCarouselNumber);
+            },
+            clickRight() {
+                this.currentCarouselNumber += 1;
+                if (this.currentCarouselNumber > this.carouselCount - 1) {
+                    this.currentCarouselNumber = 0;
+                }
+                console.log('now: ', this.currentCarouselNumber);
+            }
+        }
+    }
+</script>
 
 <style>
     .carousel_area {

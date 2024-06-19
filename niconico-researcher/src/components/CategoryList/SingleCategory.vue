@@ -58,7 +58,7 @@ export default {
             return {
                 backgroundColor: this.hoveredIndex === index ? this.items[index].color : 'transparent'
             };
-        }
+        },
   }
 }
 </script>
