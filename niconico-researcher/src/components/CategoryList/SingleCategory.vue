@@ -1,18 +1,20 @@
 <template>
     <div class="single_category_tab" v-for="(item, key) in platformlist" :key="key">
-        <div v-if="item.serviceId === 2" class="category_name">
-            ふ
+        <div class="itemContainer">
+            <div v-if="item.serviceId === 2" class="category_name">
+                ふ
+            </div>
+            <div v-else-if="item.serviceId === 3" class="category_name">
+                ツ
+            </div>
+            <div v-else-if="item.serviceId === 6" class="category_name">
+                X
+            </div>
+            <div v-else class="category_name">
+                <i v-bind:class="item.icon"></i>
+            </div>
+            <div class="category_underline" v-bind:class="item.color"></div>
         </div>
-        <div v-else-if="item.serviceId === 3" class="category_name">
-            ツ
-        </div>
-        <div v-else-if="item.serviceId === 6" class="category_name">
-            X
-        </div>
-        <div v-else class="category_name">
-            <i v-bind:class="item.icon"></i>
-        </div>
-        <div class="category_underline" v-bind:class="item.color"></div>
     </div>
 </template>
 
@@ -39,6 +41,31 @@ export default {
 </script>
 
 <style>
+    .single_category_tab {
+        height: 64px;
+        display: inline-block;
+    }
+
+    .itemContainer {
+        width: 48px;
+        height: 48px;
+        margin: 8px;
+    }
+
+    .category_name {
+        width: 48px;
+        font-weight: bold;
+        height: 24px;
+        line-height: 24px;
+        padding-top: 8px;
+    }
+
+    .category_underline {
+        width: 20px;
+        height: 2px;
+        margin: 0px auto 8px auto;
+    }
+
     .TwitchServiceColor {
         background-color: #6441a5;
     }
@@ -73,28 +100,6 @@ export default {
 
     .OtherServiceColor {
         background-color: #6f4b3e;
-    }
-
-    .category_name {
-        min-width: 40px;
-        font-weight: bold;
-        white-space: nowrap;
-        height: 25px;
-        margin: 0 auto;
-        padding: 8px 8px 0 8px;
-    }
-
-    .single_category_tab {
-        height: 48px;
-        margin-right: 8px;
-        display: inline-block;
-        border-radius: 8px;
-    }
-
-    .category_underline {
-        width: 20px;
-        margin: 0 auto;
-        height: 2px;
     }
 
 </style>
