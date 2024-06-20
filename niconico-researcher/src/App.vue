@@ -109,7 +109,7 @@ export default {
                           displayTextContent: '@nemuko',
                           accountUserName: i,
                           accountURL: 'https://www.twitch.tv/infinity_mkds',
-                          accountIconImageURL: 'niconico-researcher/src/assets/image/sample_user_03.jpeg'
+                          accountIconImageURL: 'https://static-cdn.jtvnw.net/jtv_user_pictures/b4ecf22e-5c94-4de5-a64b-4b223fba887c-profile_image-70x70.png'
                       }
                   ]
               }
