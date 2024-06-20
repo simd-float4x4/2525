@@ -49,7 +49,16 @@ export default {
                 userName: 'かつき',
                 platform: [
                     {
-                        userName: 'か@Twitch垢',
+                        platformId: Platform.Services.Twitch.serviceId,
+                        platformName: Platform.Services.Twitch.text,
+                        hasAccount: true,
+                        isBroadCasting: false,
+                        displayTextContent: '@220niconico',
+                        accountUserName: 'いちまる',
+                        accountURL: 'https://www.twitch.tv/infinity_mkds',
+                        accountIconImageURL: ''
+                    },
+                    {
                         platformId: Platform.Services.Twitch.serviceId,
                         platformName: Platform.Services.Twitch.text,
                         hasAccount: true,
@@ -68,7 +77,6 @@ export default {
                 userName: '心恋(ここ)',
                 platform: [
                     {
-                        userName: 'こここここ',
                         platformId: Platform.Services.OpenREC.serviceId,
                         platformName: Platform.Services.OpenREC.text,
                         hasAccount: true,
@@ -87,7 +95,6 @@ export default {
                 userName: 'ねむこ',
                 platform: [
                     {
-                        userName: 'ねえねえ',
                         platformId: Platform.Services.YouTubeLive.serviceId,
                         platformName: Platform.Services.YouTubeLive.text,
                         hasAccount: true,
@@ -137,7 +144,7 @@ export default {
               {
                   userId: i,
                   userHashTag: '#' + r + random,
-                  userMetaName: ['ねむこ'],
+                  userMetaName: ['青', 'あお', '2'],
                   userName: 'dfghyjuikol',
                   platform: [
                       {
@@ -146,7 +153,7 @@ export default {
                           hasAccount: true,
                           isBroadCasting: false,
                           displayTextContent: '@nemuko',
-                          accountUserName: i,
+                          accountUserName: 'aa',
                           accountURL: 'https://www.twitch.tv/infinity_mkds',
                           accountIconImageURL: ''
                       }

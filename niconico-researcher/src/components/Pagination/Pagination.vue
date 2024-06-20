@@ -50,9 +50,33 @@ export default {
 
             for(var i in this.Cells) {  //this.fruitsはdataで定義しているもの　3つのデータをforで順番に回していきます
                 var user  = this.Cells[i];  //回されてきたデータを変数foodに格納
-                if(user.userName.indexOf(this.keyword) !== -1) { //ここでfood.name(オレンジやメロン)とkeyword(ユーザーが入力した文字)が一致するか判断
-                    fruits.push(user); //一致するなら配列fruitsにデータを格納
-                } 
+
+                console.log('1st: ', this.keyword.slice(0, 1));
+                if ( user.userName.indexOf(this.keyword) !== -1 ) {
+                    fruits.push(user);
+                } else {
+                    //　メタタグによる検索
+                    var metaTagCount = user.userMetaName.length;
+                    for (var j = 0; j < metaTagCount; j++) {
+                        var firstLetter = user.userMetaName.slice(0, 1);
+                        if ( firstLetter == this.keyword.slice(0, 1) ){
+                            if ( user.userMetaName[j].indexOf(this.keyword) !== -1 ){
+                                fruits.push(user);
+                            }
+                        }
+                    }
+                    //　プラットフォームによる検索
+                    var platformCount = user.platform.length;
+                    for (var i = 0; i < platformCount; i++) {
+                        var firstLetter = user.platform[i].accountUserName.slice(0, 1);
+                        // console.log('プラット：　', firstLetter, ' ', this.keyword.slice(0, 1));
+                        if ( firstLetter == this.keyword.slice(0, 1) ){
+                            if ( user.platform[i].accountUserName.indexOf(this.keyword) !== -1 ){
+                                fruits.push(user);
+                            }
+                        }
+                    }
+                }         
             }
 
             //　配信中の人が上になるように
