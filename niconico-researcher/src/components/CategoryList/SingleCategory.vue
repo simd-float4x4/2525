@@ -91,12 +91,20 @@ export default {
         background-color: none;
     }
 
-    .itemContainer:hover {
+    .itemContainer:hover, .itemContainer:active {
         border-radius: 50%;
         color: white;
     }
 
     .itemContainer:hover .category_underline {
+        background-color: white;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all  0.3s ease;
+    }
+
+    .itemContainer:active .category_underline {
         background-color: white;
         -webkit-transition: all 0.3s ease;
         -moz-transition: all 0.3s ease;
