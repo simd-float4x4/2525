@@ -1,6 +1,5 @@
 <template>
-    <div class="cell" 
-    @click="moveToUserStreamingURL( userData.platform[0].accountURL )">
+    <div class="cell">
         <div class="cell_user_image_area">
             <div class="user_icon_container">
                 <div v-if="userData.platform[0].accountIconImageURL">
@@ -15,11 +14,13 @@
             </div>
             <div class="user_seed_tag">{{ userData.userHashTag }}</div>
         </div>
-        <div class="cell_user_name_area">
+        <div class="cell_user_name_area"
+        @click="moveToUserStreamingURL( userData.platform[0].accountURL )">
             <div class="user_name">{{ userData.userName }}</div>
             <div class="user_id_label"> {{ userData.platform[0].displayTextContent }} </div>
         </div>
-        <div class="cell_config_area">
+        <div class="cell_config_area"
+        @click="moveToUserStreamingURL( FormURL )">
             <div class="setting_option">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </div>
@@ -33,7 +34,8 @@ import * as Platform from "../js/enum.js";
 export default {
   name: 'CastCell',
   props: {
-      userData: Object
+      userData: Object,
+      FormURL: URL
   },
   methods: {
       moveToUserStreamingURL(url) {

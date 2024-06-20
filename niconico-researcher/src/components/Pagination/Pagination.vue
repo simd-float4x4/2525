@@ -1,6 +1,6 @@
 <template>
     <div class="pagination">
-        <CastCell v-for="(cell, idx) in displayCells" :key="idx" :userData="cell" />
+        <CastCell v-for="(cell, idx) in displayCells" :key="idx" :userData="cell" :FormURL="FormURL" />
         <div class="page-btns">
             <div v-for="n in pages">
                 <div v-if="n !== '...'">
@@ -26,8 +26,9 @@ export default {
         PageButton
     },
     props: {
+        FormURL: URL,
         Cells: Array,
-        CellNumPerPage: Number,
+        CellNumPerPage: Number
     },
     data() {
         return {
@@ -39,7 +40,7 @@ export default {
     created() {
         // 末尾のページ番号
         this.pageNum =  Math.ceil(this.Cells.length / this.CellNumPerPage);
-
+        console.log(this.formURL);
         this.calcPageNum();
     },
     computed: {

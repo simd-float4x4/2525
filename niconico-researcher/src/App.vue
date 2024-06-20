@@ -6,6 +6,7 @@
     <CategoryList />
     <div class="display_area">
        <Pagination 
+        :FormURL="formURL"
         :Cells="Cells"
         :CellNumPerPage="20"
         />
@@ -37,6 +38,7 @@ export default {
   },
   data() {
       return {
+          formURL: 'https://www.yahoo.co.jp/',
           Cells: [
             {
                 userId: 1,
