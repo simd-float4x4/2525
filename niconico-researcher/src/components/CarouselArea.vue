@@ -30,6 +30,7 @@ import AssetsImage from "@/assets/banner/banner.004.jpeg";
             return {
                 carouselCount: 5,
                 carousels: [
+                    //　メモ　assetsはimportしないと取得できない。それかサーバー上に上がっている画像の絶対URL
                     '@/assets/banner/banner.001.jpeg', 
                     'https://www.misterdonut.jp/m_menu/donut/images/332/product_1.png', 
                     '../assets/banner/banner.003.jpeg', 
