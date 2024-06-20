@@ -94,7 +94,7 @@ export default {
   },
   created() {
         // itemの作成
-        for (let i = 1; i <= 250; i++) {
+        for (let i = 1; i <= 85; i++) {
             this.Cells.push(
               {
                   userId: i,

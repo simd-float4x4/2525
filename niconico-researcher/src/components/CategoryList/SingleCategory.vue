@@ -14,6 +14,9 @@
             <div v-else-if="item.serviceId === 3" class="category_name">
                 ツ
             </div>
+            <div v-else-if="item.serviceId === 9" class="category_name">
+                O
+            </div>
             <div v-else-if="item.serviceId === 6" class="category_name">
                 X
             </div>
@@ -37,7 +40,7 @@ export default {
           {text: Platform.Services.NowStreaming.label, color: "NowStreamingColor", icon: Platform.Services.NowStreaming.icon},
           {text: Platform.Services.Twitch.label, color: "TwitchServiceColor", icon: Platform.Services.Twitch.icon},
           {text: Platform.Services.Whowatch.label, color: "WhowatchServiceColor", serviceId: 2},
-          {text: Platform.Services.Twitcasting.label, color: "TwitCastingServiceColor", serviceId: 3},
+          {text: Platform.Services.Twitcasting.label, color: "TwitCastingServiceColor", serviceId: 3}, {text: Platform.Services.OpenREC.label, color: "OpenRecServiceColor", serviceId: 9},
           {text: Platform.Services.Twitter.label, color: "TwitterColor", icon: Platform.Services.Twitter.icon, serviceId: 6},
           {text: Platform.Services.YouTubeLive.label, color: "YouTubeLiveColor", icon: Platform.Services.YouTubeLive.icon},
           {text: Platform.Services.LINEOpenChat.label, color: "LINEOpenChatColor", icon: Platform.Services.LINEOpenChat.icon},
@@ -51,6 +54,7 @@ export default {
             { color: '#6441a5' },
             { color: '#fb5824' },
             { color: '#0273ff' },
+            { color: '#FF4C11' },
             { color: '#0f1419' },
             { color: '#c4302b' },
             { color: '#06c755' },
@@ -132,6 +136,10 @@ export default {
 
     .TwitCastingServiceColor {
         background-color: #0273FF;
+    }
+
+    .OpenRecServiceColor {
+        background-color: #FF4C11;
     }
 
     .YouTubeLiveColor {

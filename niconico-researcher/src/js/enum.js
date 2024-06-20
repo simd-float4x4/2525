@@ -45,8 +45,14 @@ export const Services = {
         icon: 'fa-brands fa-tiktok',
         brandColor: '#fe2c55',
     },
-    Mildom: {
+    OpenREC: {
         serviceId: 9,
+        label: "OpenRec",
+        icon: '',
+        brandColor: '#ff4c11',
+    },
+    Mildom: {
+        serviceId: 10,
         label: "ミルダム",
         brandColor: '',
     },
