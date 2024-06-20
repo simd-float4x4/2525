@@ -51,7 +51,6 @@ export default {
                 var user  = this.Cells[i];  //回されてきたデータを変数foodに格納
                 if(user.userName.indexOf(this.keyword) !== -1) { //ここでfood.name(オレンジやメロン)とkeyword(ユーザーが入力した文字)が一致するか判断
                     fruits.push(user); //一致するなら配列fruitsにデータを格納
-                    console.log('fruitの個数　', fruits.length);
                 } 
             }
 
@@ -59,7 +58,6 @@ export default {
             this.pageNum =  Math.ceil(fruits.length / this.CellNumPerPage);
             this.resetPageNum();
             this.calcPageNum();
-            console.log(this.pageNum);
 
             return fruits.slice(startIdx, endIdx);
         },

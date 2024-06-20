@@ -50,6 +50,7 @@ export default {
                 platform: [
                     {
                         userName: 'か@Twitch垢',
+                        platformId: Platform.Services.Twitch.serviceId,
                         platformName: Platform.Services.Twitch.text,
                         hasAccount: true,
                         isBroadCasting: false,
@@ -68,7 +69,8 @@ export default {
                 platform: [
                     {
                         userName: 'こここここ',
-                        platformName: Platform.Services.Twitch.text,
+                        platformId: Platform.Services.OpenREC.serviceId,
+                        platformName: Platform.Services.OpenREC.text,
                         hasAccount: true,
                         isBroadCasting: true,
                         displayTextContent: '@2525coco',
@@ -86,7 +88,8 @@ export default {
                 platform: [
                     {
                         userName: 'ねえねえ',
-                        platformName: Platform.Services.Twitch.text,
+                        platformId: Platform.Services.YouTubeLive.serviceId,
+                        platformName: Platform.Services.YouTubeLive.text,
                         hasAccount: true,
                         isBroadCasting: false,
                         displayTextContent: '@nemuko',
@@ -101,22 +104,51 @@ export default {
   },
   created() {
         // itemの作成
-        for (let i = 1; i <= 85; i++) {
+        for (let i = 1; i <= 8500; i++) {
+            var r = Math.floor( Math.random() * 10 ) + 1;
+            var random = Math.floor( Math.random() * 1000 ) + 100;
+            var id  = Platform.Services.Twitch.serviceId;
+            var name = Platform.Services.Twitch.text;
+
+            if ( i % 15 == 0 ) {
+              id = Platform.Services.Twitcasting.text;
+              name = Platform.Services.Twitcasting.text;
+            } else if ( i % 12 == 0 ) {
+              id = Platform.Services.Whowatch.text;
+              name = Platform.Services.Whowatch.text;
+            } else if ( i % 9 == 0 ) {
+              id = Platform.Services.LINEOpenChat.text;
+              name = Platform.Services.LINEOpenChat.text;
+            } else if ( i % 5 == 0 ) {
+              id = Platform.Services.Twitter.text;
+              name = Platform.Services.Twitter.text;
+            } else if ( i % 3 == 0 ) {
+              id = Platform.Services.NowStreaming.text;
+              name = Platform.Services.NowStreaming.text;
+            } else if ( i % 2 == 0 ) {
+              id = Platform.Services.Instagram.text;
+              name = Platform.Services.Instagram.text;
+            } else {
+              id = Platform.Services.YouTubeLive.text;
+              name = Platform.Services.YouTubeLive.text;
+            }
+
             this.Cells.push(
               {
                   userId: i,
-                  userHashTag: '#0' + i,
+                  userHashTag: '#' + r + random,
                   userMetaName: ['ねむこ'],
                   userName: 'dfghyjuikol',
                   platform: [
                       {
-                          platformName: Platform.Services.Twitch.text,
+                          platformId: id,
+                          platformName: name,
                           hasAccount: true,
                           isBroadCasting: false,
                           displayTextContent: '@nemuko',
                           accountUserName: i,
                           accountURL: 'https://www.twitch.tv/infinity_mkds',
-                          accountIconImageURL: 'https://static-cdn.jtvnw.net/jtv_user_pictures/b4ecf22e-5c94-4de5-a64b-4b223fba887c-profile_image-70x70.png'
+                          accountIconImageURL: ''
                       }
                   ]
               }
