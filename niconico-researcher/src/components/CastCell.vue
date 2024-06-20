@@ -1,5 +1,6 @@
 <template>
-    <div class="cell">
+    <div class="cell" 
+    @click="moveToUserStreamingURL( userData.platform[0].accountURL )">
         <div class="cell_user_image_area">
             <div class="user_icon_container">
                 <div v-if="userData.platform[0].accountIconImageURL">
@@ -33,6 +34,11 @@ export default {
   name: 'CastCell',
   props: {
       userData: Object
+  },
+  methods: {
+      moveToUserStreamingURL(url) {
+        window.location.href = url;
+      }
   }
 }
 </script>

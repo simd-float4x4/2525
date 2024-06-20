@@ -50,7 +50,7 @@ export default {
                         isBroadCasting: false,
                         displayTextContent: '@220niconico',
                         accountUserName: 'ににまる',
-                        accountURL: '',
+                        accountURL: 'https://www.twitch.tv/infinity_mkds',
                         accountIconImageURL: ''
                     }
                 ]
