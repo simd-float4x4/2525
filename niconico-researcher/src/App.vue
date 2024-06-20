@@ -42,7 +42,7 @@ export default {
                 userId: 1,
                 userHashTag: '#3322',
                 userMetaName: ['かつき', 'ににまる', 'まんちょ'],
-                userName: '岩崎かつき',
+                userName: 'かつき',
                 platform: [
                     {
                         platformName: Platform.Services.Twitch.text,

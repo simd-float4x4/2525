@@ -1,5 +1,5 @@
 <template>
-    <div class="carousel_area">
+    <div class="carousel_area" :style="{ 'background-image': 'url(' + currentImage + ')' }">
         <div 
         @click="clickLeft"
         class="carousel left_button">
@@ -22,14 +22,27 @@
 </template>
 
 <script>
+import AssetsImage from "@/assets/banner/banner.004.jpeg";
+
     export default {
         name: 'CarouselArea',
         data: () => {
             return {
                 carouselCount: 5,
-                carousels: ['image1', '', 'image2', 'image3', 'image4'],
+                carousels: [
+                    '@/assets/banner/banner.001.jpeg', 
+                    'https://www.misterdonut.jp/m_menu/donut/images/332/product_1.png', 
+                    '../assets/banner/banner.003.jpeg', 
+                    '../assets/banner/banner.004.jpeg', 
+                    AssetsImage
+                ],
                 currentCarouselNumber: 0,
             };
+        },
+        computed: {
+            currentImage() {
+                return this.carousels[this.currentCarouselNumber];
+            }
         },
         methods: {
             clickLeft() {
@@ -55,6 +68,8 @@
         height: 195px;
         margin-bottom: 8px;
         position: relative;
+        background-position: center;
+        background-size: contain;
     }
 
     .carousel {
