@@ -2,13 +2,14 @@
   <div class="main_view">
     <NavigationBar />
     <CarouselArea />
-    <SearchForm />
+    <SearchForm  @catchMessage="displayMessage" />
     <CategoryList />
     <div class="display_area">
        <Pagination 
         :FormURL="formURL"
         :Cells="Cells"
         :CellNumPerPage="20"
+        :keyword="keyword"
         />
     </div>
     <FooterView />
@@ -38,6 +39,7 @@ export default {
   },
   data() {
       return {
+          keyword: '',
           formURL: 'https://www.yahoo.co.jp/',
           Cells: [
             {
@@ -47,6 +49,7 @@ export default {
                 userName: 'かつき',
                 platform: [
                     {
+                        userName: 'か@Twitch垢',
                         platformName: Platform.Services.Twitch.text,
                         hasAccount: true,
                         isBroadCasting: false,
@@ -64,6 +67,7 @@ export default {
                 userName: '心恋(ここ)',
                 platform: [
                     {
+                        userName: 'こここここ',
                         platformName: Platform.Services.Twitch.text,
                         hasAccount: true,
                         isBroadCasting: true,
@@ -81,6 +85,7 @@ export default {
                 userName: 'ねむこ',
                 platform: [
                     {
+                        userName: 'ねえねえ',
                         platformName: Platform.Services.Twitch.text,
                         hasAccount: true,
                         isBroadCasting: false,
@@ -102,7 +107,7 @@ export default {
                   userId: i,
                   userHashTag: '#0' + i,
                   userMetaName: ['ねむこ'],
-                  userName: i,
+                  userName: 'dfghyjuikol',
                   platform: [
                       {
                           platformName: Platform.Services.Twitch.text,
@@ -117,6 +122,11 @@ export default {
               }
             );
         }
+    },
+    methods: {
+      displayMessage(mes){
+        this.keyword = mes;
+      }
     }
 }
 </script>

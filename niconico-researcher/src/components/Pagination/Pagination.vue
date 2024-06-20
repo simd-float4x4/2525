@@ -26,9 +26,10 @@ export default {
         PageButton
     },
     props: {
+        keyword: String,
         FormURL: URL,
         Cells: Array,
-        CellNumPerPage: Number
+        CellNumPerPage: Number // １ページあたりに表示する件数
     },
     data() {
         return {
@@ -38,19 +39,37 @@ export default {
         }
     },
     created() {
-        // 末尾のページ番号
-        this.pageNum =  Math.ceil(this.Cells.length / this.CellNumPerPage);
-        console.log(this.formURL);
-        this.calcPageNum();
+        this.initPages();
     },
     computed: {
         displayCells() {
-            const startIdx = (this.curPage - 1) * this.CellNumPerPage;
-            const endIdx   = startIdx + this.CellNumPerPage;
-            return this.Cells.slice(startIdx, endIdx);
+            var startIdx = (this.curPage - 1) * this.CellNumPerPage;
+            var endIdx   = startIdx + this.CellNumPerPage;
+    
+            var fruits = [];
+            for(var i in this.Cells) {  //this.fruitsはdataで定義しているもの　3つのデータをforで順番に回していきます
+                var user  = this.Cells[i];  //回されてきたデータを変数foodに格納
+                if(user.userName.indexOf(this.keyword) !== -1) { //ここでfood.name(オレンジやメロン)とkeyword(ユーザーが入力した文字)が一致するか判断
+                    fruits.push(user); //一致するなら配列fruitsにデータを格納
+                    console.log('fruitの個数　', fruits.length);
+                } 
+            }
+
+            // 末尾のページ番号
+            this.pageNum =  Math.ceil(fruits.length / this.CellNumPerPage);
+            this.resetPageNum();
+            this.calcPageNum();
+            console.log(this.pageNum);
+
+            return fruits.slice(startIdx, endIdx);
         },
     },
     methods: {
+        initPages() {
+            // 末尾のページ番号
+            this.pageNum =  Math.ceil(this.Cells.length / this.CellNumPerPage);
+            this.calcPageNum();
+        }, 
         changePage(value) {
             this.resetPageNum();
             this.curPage = value;

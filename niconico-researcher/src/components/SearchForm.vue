@@ -2,10 +2,26 @@
     <div class="search_form_view" contenteditable="true">
         <div class="search_form_input_area">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input v-model="message" placeholder="検索したい配信者の名前を入力" />
+            <input v-model="keyword" placeholder="検索したい配信者の名前を入力" />
         </div>
     </div>
 </template>
+
+<script>
+    export default {
+        data() {
+            return{
+                keyword: ''
+            }
+        },
+        watch: {
+            keyword: function() {
+                // 値の変化があるたび検索キーワードを保存
+                this.$emit('catchMessage', this.keyword);
+            }
+        }
+    }
+</script>
 
 <style scoped>
     input {
