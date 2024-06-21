@@ -62,7 +62,7 @@ export const Services = {
         brandColor: '#BAA898',
     },
     NowStreaming: {
-        serviceId: 1,
+        serviceId: 998,
         label: "配信中",
         icon: 'fa-solid fa-video',
         brandColor: 'red',

@@ -39,17 +39,74 @@ export default {
       hoveredIndex: null,
       selectedIndex: null,
       platformlist: [
-          {text: Platform.Services.All.label, color: "AllServiceColor", serviceId: 997},
-          {text: Platform.Services.NowStreaming.label, color: "NowStreamingColor", icon: Platform.Services.NowStreaming.icon},
-          {text: Platform.Services.Twitch.label, color: "TwitchServiceColor", icon: Platform.Services.Twitch.icon},
-          {text: Platform.Services.Whowatch.label, color: "WhowatchServiceColor", serviceId: 2},
-          {text: Platform.Services.Twitcasting.label, color: "TwitCastingServiceColor", serviceId: 3}, {text: Platform.Services.OpenREC.label, color: "OpenRecServiceColor", serviceId: 9},
-          {text: Platform.Services.Twitter.label, color: "TwitterColor", icon: Platform.Services.Twitter.icon, serviceId: 6},
-          {text: Platform.Services.YouTubeLive.label, color: "YouTubeLiveColor", icon: Platform.Services.YouTubeLive.icon},
-          {text: Platform.Services.LINEOpenChat.label, color: "LINEOpenChatColor", icon: Platform.Services.LINEOpenChat.icon},
-          {text: Platform.Services.TikTok.label, color: "TikTokColor", icon: Platform.Services.TikTok.icon},
-          {text: Platform.Services.Instagram.label, color: "InstagramColor", icon: Platform.Services.Instagram.icon},
-          {text: Platform.Services.Other.label, color: "OtherServiceColor", icon: Platform.Services.Other.icon},
+        {
+            text: Platform.Services.All.label, 
+            color: "AllServiceColor", 
+            serviceId: 997
+        },
+        {
+            text: Platform.Services.NowStreaming.label, 
+            color: "NowStreamingColor", 
+            icon: Platform.Services.NowStreaming.icon, 
+            serviceId: 998
+        },
+        {
+            text: Platform.Services.Twitch.label, 
+            color: "TwitchServiceColor", 
+            icon: Platform.Services.Twitch.icon, 
+            serviceId: 1
+        },
+        {
+            text: Platform.Services.Whowatch.label, 
+            color: "WhowatchServiceColor", 
+            serviceId: 2
+        },
+        {
+            text: Platform.Services.Twitcasting.label, 
+            color: "TwitCastingServiceColor", 
+            serviceId: 3
+        }, 
+        {
+            text: Platform.Services.OpenREC.label, 
+            color: "OpenRecServiceColor", 
+            serviceId: 9
+        },
+        {
+            text: Platform.Services.Twitter.label, 
+            color: "TwitterColor", 
+            icon: Platform.Services.Twitter.icon, 
+            serviceId: 6
+        },
+        {
+            text: Platform.Services.YouTubeLive.label, 
+            color: "YouTubeLiveColor", 
+            icon: Platform.Services.YouTubeLive.icon, 
+            serviceId: 4
+        },
+        {
+            text: Platform.Services.LINEOpenChat.label, 
+            color: "LINEOpenChatColor", 
+            icon: Platform.Services.LINEOpenChat.icon, 
+            serviceId: 5
+        },
+        {
+            text: Platform.Services.TikTok.label, 
+            color: "TikTokColor", 
+            icon: Platform.Services.TikTok.icon, 
+            serviceId: 8
+        },
+        {
+            text: Platform.Services.Instagram.label, 
+            color: "InstagramColor", 
+            icon: Platform.Services.Instagram.icon,
+            serviceId: 7
+        },
+        {
+            text: Platform.Services.Other.label, 
+            color: "OtherServiceColor", 
+            icon: Platform.Services.Other.icon, 
+            serviceId: 999
+        },
       ],
       items: [
             { color: '#BAA898' },
@@ -71,6 +128,9 @@ export default {
             if (this.hoveredIndex === index) {
                 return { backgroundColor: this.items[index].color, 'border-radius': '50%' };
             } else if (this.selectedIndex === index) {
+                // TODO:　再起されまくってる！！！
+                this.$emit('clickedIdNumber', this.platformlist[index].serviceId);
+                // console.log('id: ', this.platformlist[index].serviceId);
                 return { backgroundColor: this.items[index].color, 'border-radius': '50%' };
             } else {
                 return { backgroundColor: 'transparent', 'border-radius': '0%' };
