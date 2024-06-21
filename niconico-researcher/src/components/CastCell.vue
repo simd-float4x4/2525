@@ -35,7 +35,7 @@ export default {
   name: 'CastCell',
   props: {
       userData: Object,
-      FormURL: URL
+      FormURL: String
   },
   methods: {
       moveToUserStreamingURL(url) {

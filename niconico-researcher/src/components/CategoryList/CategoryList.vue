@@ -1,6 +1,6 @@
 <template>
     <div class="category_list_area">
-        <SingleCategory @clickedIdNumber="number"  />
+        <SingleCategory @clickedIdNumber="number" />
     </div>
 </template>
 

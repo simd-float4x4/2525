@@ -27,7 +27,7 @@ export default {
     },
     props: {
         keyword: String,
-        FormURL: URL,
+        FormURL: String,
         Cells: Array,
         CellNumPerPage: Number // １ページあたりに表示する件数
     },
