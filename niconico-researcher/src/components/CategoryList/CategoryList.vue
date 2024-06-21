@@ -9,6 +9,7 @@
 
 <script>
 import SingleCategory from './SingleCategory.vue'
+import * as Platform from "/Users/asobu_dev/Desktop/Project/System/niconicoSearcher/niconico-researcher/src/js/enum.js"
 
 export default {
     name: 'CategoryList',
@@ -34,40 +35,40 @@ export default {
       returnCategory(){
           switch(this.categoryKeyword){
           case 1:
-            this.category = 'Twitch';
+            this.category = Platform.Services.Twitch.label;
             break;
           case 2:
-            this.category = 'ふわっち';
+            this.category = Platform.Services.Whowatch.label;
             break;
           case 3:
-            this.category = 'ツイキャス';
+            this.category = Platform.Services.Twitcasting.label;
             break;
           case 4:
-            this.category = 'YouTubeLive';
+            this.category = Platform.Services.YouTubeLive.label;
             break;
           case 5:
-            this.category = 'オープンチャット';
+            this.category = Platform.Services.LINEOpenChat.label;
             break;
           case 6:
-            this.category = 'X/スペース';
+            this.category = Platform.Services.Twitter.label;
             break;
           case 7:
-            this.category = 'Instagram';
+            this.category = Platform.Services.Instagram.label;
             break;
           case 8:
-            this.category = 'TikTok';
+            this.category = Platform.Services.TikTok.label;
             break;
           case 9:
-            this.category = 'OpenRec';
+            this.category = Platform.Services.OpenREC.label;
             break;
           case 997:
-            this.category = 'ALL';
+            this.category = Platform.Services.ALL.label;
             break;
           case 998:
-            this.category = '配信中';
+            this.category = Platform.Services.NowStreaming.label;
             break;
           case 999:
-            this.category = 'その他';
+            this.category = Platform.Services.Other.label;
             break;
           default:
             console.log('error');

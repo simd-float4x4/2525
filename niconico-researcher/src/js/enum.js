@@ -17,7 +17,7 @@ export const Services = {
     },
     YouTubeLive: {
         serviceId: 4,
-        label: "YouTubeライブ",
+        label: "YouTubeLive",
         icon: 'fa-brands fa-youtube',
         brandColor: '#c4302b',
     },

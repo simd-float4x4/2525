@@ -26,6 +26,7 @@ export default {
         PageButton
     },
     props: {
+        categoryKeyword: String,
         keyword: String,
         FormURL: String,
         Cells: Array,
@@ -45,11 +46,24 @@ export default {
         displayCells() {
             var startIdx = (this.curPage - 1) * this.CellNumPerPage;
             var endIdx   = startIdx + this.CellNumPerPage;
-    
-            var fruits = []; // 全部の結果
 
-            for(var i in this.Cells) {  //this.fruitsはdataで定義しているもの 3つのデータをforで順番に回していきます
-                var user  = this.Cells[i];  //回されてきたデータを変数foodに格納
+            var snacks = [];
+            var fruits = []; // 全部の結果
+            snacks = this.Cells;
+            console.log(snacks);
+        
+            if ( this.categoryKeyword ) {
+                snacks = snacks.filter(cell => {
+                    const filteredPlatforms = cell.platform.filter(platform => platform.platformName === this.categoryKeyword);
+                    return filteredPlatforms.length > 0;
+                });
+                console.log(snacks);
+            }
+            
+            
+
+            for(var i in snacks) {  //this.fruitsはdataで定義しているもの 3つのデータをforで順番に回していきます
+                var user  = snacks[i];  //回されてきたデータを変数foodに格納
 
                 // console.log('1st: ', this.keyword.slice(0, 1));
                 if ( user.userName.indexOf(this.keyword) !== -1 ) {
