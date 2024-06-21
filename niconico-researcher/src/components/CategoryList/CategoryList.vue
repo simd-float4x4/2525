@@ -1,9 +1,9 @@
 <template>
-    <div class="category_list_area">
+    <div class="category_list_area" @click="returnCategory">
         <SingleCategory
-        v-model="category" 
-        @clickedIdNumber="number"
-        @click="returnCategory"/>
+          v-model="category" 
+          @clickedIdNumber="number"
+        />
     </div>
 </template>
 
@@ -32,8 +32,47 @@ export default {
         this.categoryKeyword = index;
       },
       returnCategory(){
-        this.category = 'Whowatch';
-        console.log('カテゴリ: ', this.category);
+          switch(this.categoryKeyword){
+          case 1:
+            this.categoryKeyword = 'Twitch';
+            break;
+          case 2:
+            this.categoryKeyword = 'ふわっち';
+            break;
+          case 3:
+            this.categoryKeyword = 'ツイキャス';
+            break;
+          case 4:
+            this.categoryKeyword = 'YouTubeLive';
+            break;
+          case 5:
+            this.categoryKeyword = 'オープンチャット';
+            break;
+          case 6:
+            this.categoryKeyword = 'X/スペース';
+            break;
+          case 7:
+            this.categoryKeyword = 'Instagram';
+            break;
+          case 8:
+            this.categoryKeyword = 'TikTok';
+            break;
+          case 9:
+            this.categoryKeyword = 'OpenRec';
+            break;
+          case 997:
+            this.categoryKeyword = 'ALL';
+            break;
+          case 998:
+            this.categoryKeyword = '配信中';
+            break;
+          case 999:
+            this.categoryKeyword = 'その他';
+            break;
+          default:
+            console.log('error');
+          }
+          console.log(this.categoryKeyword);
       }
     }
 }
