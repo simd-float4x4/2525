@@ -19,10 +19,9 @@
 <script>
 import NavigationBar from './components/NavigationBar.vue'
 import CarouselArea from './components/CarouselArea.vue'
-import CastCell from './components/CastCell.vue'
 import SearchForm from './components/SearchForm.vue'
 import CategoryList from './components/CategoryList/CategoryList.vue'
-import Pagination from './components/Pagination/Pagination.vue'
+import Pagination from './components/Pagination/PaginationCell.vue'
 import FooterView from './components/FooterView.vue'
 import * as Platform from "/Users/asobu_dev/Desktop/Project/System/niconicoSearcher/niconico-researcher/src/js/enum.js"
 
@@ -33,7 +32,6 @@ export default {
     CarouselArea,
     SearchForm,
     CategoryList,
-    CastCell,
     Pagination,
     FooterView
   },

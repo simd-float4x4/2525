@@ -2,7 +2,7 @@
     <div class="pagination">
         <CastCell v-for="(cell, idx) in displayCells" :key="idx" :userData="cell" :FormURL="FormURL" />
         <div class="page-btns">
-            <div v-for="n in pages">
+            <div v-for="(n, pidx) in pages" :key="pidx">
                 <div v-if="n !== '...'">
                     <page-button @changePage="changePage"  
                         :key="n" 
@@ -46,16 +46,16 @@ export default {
             var startIdx = (this.curPage - 1) * this.CellNumPerPage;
             var endIdx   = startIdx + this.CellNumPerPage;
     
-            var fruits = [];　// 全部の結果
+            var fruits = []; // 全部の結果
 
-            for(var i in this.Cells) {  //this.fruitsはdataで定義しているもの　3つのデータをforで順番に回していきます
+            for(var i in this.Cells) {  //this.fruitsはdataで定義しているもの 3つのデータをforで順番に回していきます
                 var user  = this.Cells[i];  //回されてきたデータを変数foodに格納
 
                 // console.log('1st: ', this.keyword.slice(0, 1));
                 if ( user.userName.indexOf(this.keyword) !== -1 ) {
                     fruits.push(user);
                 } else {
-                    //　メタタグによる検索
+                    // メタタグによる検索
                     var metaTagCount = user.userMetaName.length;
                     for (var j = 0; j < metaTagCount; j++) {
                         var firstLetter = user.userMetaName.slice(0, 1);
@@ -65,13 +65,13 @@ export default {
                             }
                         }
                     }
-                    //　プラットフォームによる検索
+                    // プラットフォームによる検索
                     var platformCount = user.platform.length;
-                    for (var i = 0; i < platformCount; i++) {
-                        var firstLetter = user.platform[i].accountUserName.slice(0, 1);
-                        // console.log('プラット：　', firstLetter, ' ', this.keyword.slice(0, 1));
-                        if ( firstLetter == this.keyword.slice(0, 1) ){
-                            if ( user.platform[i].accountUserName.indexOf(this.keyword) !== -1 ){
+                    for (var h = 0; h < platformCount; h++) {
+                        var fLetter = user.platform[h].accountUserName.slice(0, 1);
+                        // console.log('プラット： ', fLetter, ' ', this.keyword.slice(0, 1));
+                        if ( fLetter == this.keyword.slice(0, 1) ){
+                            if ( user.platform[h].accountUserName.indexOf(this.keyword) !== -1 ){
                                 fruits.push(user);
                             }
                         }
@@ -79,7 +79,7 @@ export default {
                 }         
             }
 
-            //　配信中の人が上になるように
+            // 配信中の人が上になるように
             fruits.sort(function(a, b) {
                 if (a.platform[0].isBroadCasting < b.platform[0].isBroadCasting) {
                     return 1;
@@ -89,7 +89,8 @@ export default {
             });
 
             // 末尾のページ番号
-            this.pageNum =  Math.ceil(fruits.length / this.CellNumPerPage);
+            // TODO: UnexpectedError対策
+            // this.pageNum = Math.ceil(fruits.length / this.CellNumPerPage);
             this.resetPageNum();
             this.calcPageNum();
 

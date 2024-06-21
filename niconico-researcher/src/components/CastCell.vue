@@ -29,7 +29,6 @@
 </template>
 
 <script>
-import * as Platform from "../js/enum.js";
 
 export default {
   name: 'CastCell',
