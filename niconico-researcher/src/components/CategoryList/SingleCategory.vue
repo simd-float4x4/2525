@@ -4,7 +4,7 @@
             :style="itemStyle(key)" 
              @mouseover="hoveredIndex = key" 
              @mouseleave="hoveredIndex = null"
-             @click="selectedIndex = key"
+             @click="selectedIndex = key; changeColor(key)"
         >
             <div v-if="item.serviceId === 997" class="category_name" :style="itemSubTextStyle(key)" >
                 ALL
@@ -124,38 +124,45 @@ export default {
         ],
   }),
   methods: {
-       itemStyle(index) {
-            if (this.hoveredIndex === index) {
-                return { backgroundColor: this.items[index].color, 'border-radius': '50%' };
-            } else if (this.selectedIndex === index) {
-                // TODO:　再起されまくってる！！！
-                this.$emit('clickedIdNumber', this.platformlist[index].serviceId);
-                // console.log('id: ', this.platformlist[index].serviceId);
-                return { backgroundColor: this.items[index].color, 'border-radius': '50%' };
-            } else {
-                return { backgroundColor: 'transparent', 'border-radius': '0%' };
-            }
-        },
+    emitIdNumber(index){
+        this.$emit('clickedIdNumber', this.platformlist[index].serviceId);
+    },
 
-        itemSubTextStyle(index) {
-            if (this.hoveredIndex === index) {
-                return { color: 'white' };
-            } else if (this.selectedIndex === index) {
-                return { color: 'white' };
-            } else {
-                return { color: '#2c3e50' };
-            }
-        },
+    itemStyle(index) {
+        if (this.hoveredIndex === index) {
+            return { backgroundColor: this.items[index].color, 'border-radius': '50%' };
+        } else if (this.selectedIndex === index) {
+            // console.log('id: ', this.platformlist[index].serviceId);
+            return { backgroundColor: this.items[index].color, 'border-radius': '50%' };
+        } else {
+            return { backgroundColor: 'transparent', 'border-radius': '0%' };
+        }
+    },
 
-        itemSubUnderlineStyle(index) {
-            if (this.hoveredIndex === index) {
-                return { backgroundColor: 'white' };
-            } else if (this.selectedIndex === index) {
-                return { backgroundColor: 'white' };
-            } else {
-                return { backgroundColor: this.items[index].color };
-            }
-        },
+    changeColor(index) {
+        this.itemStyle(index);
+        this.emitIdNumber(index);
+    },
+
+    itemSubTextStyle(index) {
+        if (this.hoveredIndex === index) {
+            return { color: 'white' };
+        } else if (this.selectedIndex === index) {
+            return { color: 'white' };
+        } else {
+            return { color: '#2c3e50' };
+        }
+    },
+
+    itemSubUnderlineStyle(index) {
+        if (this.hoveredIndex === index) {
+            return { backgroundColor: 'white' };
+        } else if (this.selectedIndex === index) {
+            return { backgroundColor: 'white' };
+        } else {
+            return { backgroundColor: this.items[index].color };
+        }
+    },
     }
 }
 </script>
