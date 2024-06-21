@@ -62,7 +62,7 @@ export default {
             this.category = Platform.Services.OpenREC.label;
             break;
           case 997:
-            this.category = Platform.Services.ALL.label;
+            this.category = Platform.Services.All.label;
             break;
           case 998:
             this.category = Platform.Services.NowStreaming.label;
