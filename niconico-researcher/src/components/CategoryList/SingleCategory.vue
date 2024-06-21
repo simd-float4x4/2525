@@ -123,6 +123,7 @@ export default {
             { color: '#6f4b3e' },
         ],
   }),
+  emits: ['clickedIdNumber'], 
   methods: {
     emitIdNumber(index){
         this.$emit('clickedIdNumber', this.platformlist[index].serviceId);
