@@ -34,45 +34,45 @@ export default {
       returnCategory(){
           switch(this.categoryKeyword){
           case 1:
-            this.categoryKeyword = 'Twitch';
+            this.category = 'Twitch';
             break;
           case 2:
-            this.categoryKeyword = 'ふわっち';
+            this.category = 'ふわっち';
             break;
           case 3:
-            this.categoryKeyword = 'ツイキャス';
+            this.category = 'ツイキャス';
             break;
           case 4:
-            this.categoryKeyword = 'YouTubeLive';
+            this.category = 'YouTubeLive';
             break;
           case 5:
-            this.categoryKeyword = 'オープンチャット';
+            this.category = 'オープンチャット';
             break;
           case 6:
-            this.categoryKeyword = 'X/スペース';
+            this.category = 'X/スペース';
             break;
           case 7:
-            this.categoryKeyword = 'Instagram';
+            this.category = 'Instagram';
             break;
           case 8:
-            this.categoryKeyword = 'TikTok';
+            this.category = 'TikTok';
             break;
           case 9:
-            this.categoryKeyword = 'OpenRec';
+            this.category = 'OpenRec';
             break;
           case 997:
-            this.categoryKeyword = 'ALL';
+            this.category = 'ALL';
             break;
           case 998:
-            this.categoryKeyword = '配信中';
+            this.category = '配信中';
             break;
           case 999:
-            this.categoryKeyword = 'その他';
+            this.category = 'その他';
             break;
           default:
             console.log('error');
           }
-          console.log(this.categoryKeyword);
+          console.log(this.category);
       }
     }
 }
