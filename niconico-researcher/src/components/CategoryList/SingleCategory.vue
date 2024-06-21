@@ -1,30 +1,31 @@
 <template>
     <div class="single_category_tab" v-for="(item, key) in platformlist" :key="key">
-        <div class="itemContainer"
+        <button class="itemContainer"
             :style="itemStyle(key)" 
              @mouseover="hoveredIndex = key" 
              @mouseleave="hoveredIndex = null"
+             @click="selectedIndex = key"
         >
-            <div v-if="item.serviceId === 997" class="category_name">
+            <div v-if="item.serviceId === 997" class="category_name" :style="itemSubTextStyle(key)" >
                 ALL
             </div>
-            <div v-else-if="item.serviceId === 2" class="category_name">
+            <div v-else-if="item.serviceId === 2" class="category_name" :style="itemSubTextStyle(key)" >
                 ふ
             </div>
-            <div v-else-if="item.serviceId === 3" class="category_name">
+            <div v-else-if="item.serviceId === 3" class="category_name" :style="itemSubTextStyle(key)" >
                 ツ
             </div>
-            <div v-else-if="item.serviceId === 9" class="category_name">
+            <div v-else-if="item.serviceId === 9" class="category_name" :style="itemSubTextStyle(key)" >
                 O
             </div>
-            <div v-else-if="item.serviceId === 6" class="category_name">
+            <div v-else-if="item.serviceId === 6" class="category_name" :style="itemSubTextStyle(key)" >
                 X
             </div>
-            <div v-else class="category_name">
+            <div v-else class="category_name" :style="itemSubTextStyle(key)">
                 <i v-bind:class="item.icon"></i>
             </div>
-            <div class="category_underline" v-bind:class="item.color"></div>
-        </div>
+            <div class="category_underline" v-bind:class="item.color" :style="itemSubUnderlineStyle(key)" ></div>
+        </button>
     </div>
 </template>
 
@@ -35,6 +36,8 @@ import * as Platform from "/Users/asobu_dev/Desktop/Project/System/niconicoSearc
 export default {
   name: 'CategoryName',
   data: () => ({
+      hoveredIndex: null,
+      selectedIndex: null,
       platformlist: [
           {text: Platform.Services.All.label, color: "AllServiceColor", serviceId: 997},
           {text: Platform.Services.NowStreaming.label, color: "NowStreamingColor", icon: Platform.Services.NowStreaming.icon},
@@ -62,19 +65,50 @@ export default {
             { color: '#cf2e92' },
             { color: '#6f4b3e' },
         ],
-        hoveredIndex: null
   }),
   methods: {
        itemStyle(index) {
-            return {
-                backgroundColor: this.hoveredIndex === index ? this.items[index].color : 'transparent'
-            };
+            if (this.hoveredIndex === index) {
+                return { backgroundColor: this.items[index].color, 'border-radius': '50%' };
+            } else if (this.selectedIndex === index) {
+                return { backgroundColor: this.items[index].color, 'border-radius': '50%' };
+            } else {
+                return { backgroundColor: 'transparent', 'border-radius': '0%' };
+            }
         },
-  }
+
+        itemSubTextStyle(index) {
+            if (this.hoveredIndex === index) {
+                return { color: 'white' };
+            } else if (this.selectedIndex === index) {
+                return { color: 'white' };
+            } else {
+                return { color: '#2c3e50' };
+            }
+        },
+
+        itemSubUnderlineStyle(index) {
+            if (this.hoveredIndex === index) {
+                return { backgroundColor: 'white' };
+            } else if (this.selectedIndex === index) {
+                return { backgroundColor: 'white' };
+            } else {
+                return { backgroundColor: this.items[index].color };
+            }
+        },
+    }
 }
 </script>
 
-<style>
+<style scoped>
+    button{
+            border: none;
+            cursor: pointer;
+            outline: none;
+            padding: 0;
+            appearance: none;
+    }
+
     .single_category_tab {
         height: 64px;
         display: inline-block;
@@ -89,11 +123,6 @@ export default {
         -o-transition: all 0.3s ease;
         transition: all  0.3s ease;
         background-color: none;
-    }
-
-    .itemContainer:hover, .itemContainer:active {
-        border-radius: 50%;
-        color: white;
     }
 
     .itemContainer:hover .category_underline {

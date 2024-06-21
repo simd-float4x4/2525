@@ -51,7 +51,7 @@ export default {
             for(var i in this.Cells) {  //this.fruitsはdataで定義しているもの　3つのデータをforで順番に回していきます
                 var user  = this.Cells[i];  //回されてきたデータを変数foodに格納
 
-                console.log('1st: ', this.keyword.slice(0, 1));
+                // console.log('1st: ', this.keyword.slice(0, 1));
                 if ( user.userName.indexOf(this.keyword) !== -1 ) {
                     fruits.push(user);
                 } else {
