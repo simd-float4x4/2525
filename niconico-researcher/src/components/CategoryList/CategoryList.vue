@@ -1,6 +1,9 @@
 <template>
     <div class="category_list_area">
-        <SingleCategory @clickedIdNumber="number" />
+        <SingleCategory
+        v-model="category" 
+        @clickedIdNumber="number"
+        @click="returnCategory"/>
     </div>
 </template>
 
@@ -14,14 +17,23 @@ export default {
     },
     data() {
         return{
-            categoryKeyword: null
+            categoryKeyword: null,
+            category: ''
         }
     },
-    
+    watch: {
+      category: function() {
+        // 値の変化があるたび検索キーワードを保存
+        this.$emit('category', this.category);
+      }
+    },
     methods: {
       number(index) {
         this.categoryKeyword = index;
-        console.log('ここに数字が出たら成功', this.categoryKeyword);
+      },
+      returnCategory(){
+        this.category = 'Whowatch';
+        console.log('カテゴリ: ', this.category);
       }
     }
 }
