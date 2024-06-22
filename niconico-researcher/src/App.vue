@@ -36,6 +36,57 @@ export default {
     Pagination,
     FooterView
   },
+  created() {
+    for (let i = 1; i <= 8500; i++) {
+      var r = Math.floor( Math.random() * 10 ) + 1;
+      var random = Math.floor( Math.random() * 1000 ) + 100;
+      var id  = Platform.Services.Twitch.serviceId;
+      var name = Platform.Services.Twitch.label;
+
+      if ( i % 15 == 0 ) {
+        id = Platform.Services.Twitcasting.serviceId;
+        name = Platform.Services.Twitcasting.label;
+      } else if ( i % 12 == 0 ) {
+        id = Platform.Services.Whowatch.serviceId;
+        name = Platform.Services.Whowatch.label;
+      } else if ( i % 9 == 0 ) {
+        id = Platform.Services.LINEOpenChat.serviceId;
+        name = Platform.Services.LINEOpenChat.label;
+      } else if ( i % 5 == 0 ) {
+        id = Platform.Services.Twitter.serviceId;
+        name = Platform.Services.Twitter.label;
+      } else if ( i % 3 == 0 ) {
+        id = Platform.Services.NowStreaming.serviceId;
+        name = Platform.Services.NowStreaming.label;
+      } else if ( i % 2 == 0 ) {
+        id = Platform.Services.Instagram.serviceId;
+        name = Platform.Services.Instagram.label;
+      } else {
+        id = Platform.Services.YouTubeLive.
+        name = Platform.Services.YouTubeLive.label;
+      }
+      this.Cells.push(
+            {
+                userId: i,
+                userHashTag: '#' + r + random,
+                userMetaName: ['あ', 'い', '上', 'お', 'う'],
+                userName: 'テスト' + i,
+                platform: [
+                    {
+                        platformId: id,
+                        platformName: name,
+                        hasAccount: true,
+                        isBroadCasting: false,
+                        displayTextContent: '@nemuko',
+                        accountUserName: i,
+                        accountURL: 'https://www.twitch.tv/infinity_mkds',
+                        accountIconImageURL: ''
+                    }
+                ]
+            }
+        );
+      }
+  },
   data() {
       return {
           keyword: '',

@@ -172,8 +172,7 @@ export default {
              console.log('FiNAL FRUiTS ZiPPER: ', fruits);
 
             // 末尾のページ番号
-            // TODO: UnexpectedError対策
-            // this.pageNum = Math.ceil(fruits.length / this.CellNumPerPage);
+            this.ceilTwoElement(fruits);
             this.resetPageNum();
             this.calcPageNum();
 
@@ -181,6 +180,9 @@ export default {
         },
     },
     methods: {
+        ceilTwoElement(fruits){
+            this.pageNum =  Math.ceil(fruits.length / this.CellNumPerPage)
+        },
         initPages() {
             // 末尾のページ番号
             this.pageNum =  Math.ceil(this.Cells.length / this.CellNumPerPage);
