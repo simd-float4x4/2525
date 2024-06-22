@@ -52,6 +52,9 @@ export default {
       } else if ( i % 9 == 0 ) {
         id = Platform.Services.LINEOpenChat.serviceId;
         name = Platform.Services.LINEOpenChat.label;
+      } else if ( i % 7 == 0 ) {
+        id = Platform.Services.YouTubeLive.
+        name = Platform.Services.YouTubeLive.label;
       } else if ( i % 5 == 0 ) {
         id = Platform.Services.Twitter.serviceId;
         name = Platform.Services.Twitter.label;
@@ -61,10 +64,9 @@ export default {
       } else if ( i % 2 == 0 ) {
         id = Platform.Services.Instagram.serviceId;
         name = Platform.Services.Instagram.label;
-      } else {
-        id = Platform.Services.YouTubeLive.
-        name = Platform.Services.YouTubeLive.label;
-      }
+      } 
+
+
       this.Cells.push(
             {
                 userId: i,
@@ -78,7 +80,7 @@ export default {
                         hasAccount: true,
                         isBroadCasting: false,
                         displayTextContent: '@nemuko',
-                        accountUserName: i,
+                        accountUserName: 'test' + i,
                         accountURL: 'https://www.twitch.tv/infinity_mkds',
                         accountIconImageURL: ''
                     }

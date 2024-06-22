@@ -81,7 +81,7 @@ export default {
                 color = Platform.Services.Other.brandColor;
                 break;
           }
-          console.log('color: ', color);
+          // console.log('color: ', color);
           return {
                'border-left' : '5px solid' + color
           }

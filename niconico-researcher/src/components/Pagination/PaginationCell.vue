@@ -1,7 +1,10 @@
 <template>
     <div class="pagination">
-          <div>
+        <div v-if="displayCells.length > 0">
             <CastCell v-for="(cell, idx) in displayCells" :key="idx" :userData="cell" :FormURL="FormURL" />
+        </div>
+        <div v-else>
+            該当するデータがありませんでした
         </div>
         <div class="page-btns">
             <div v-for="(n, pidx) in pages" :key="pidx">
@@ -49,7 +52,6 @@ export default {
         displayCells() {
             var startIdx = (this.curPage - 1) * this.CellNumPerPage;
             var endIdx   = startIdx + this.CellNumPerPage;
-
             var snacks = [];
             var fruits = []; // 全部の結果
             snacks = this.Cells;
@@ -57,7 +59,7 @@ export default {
             if ( this.categoryKeyword ) {
                 switch(this.categoryKeyword) {
                     case Platform.Services.All.label:
-                    console.log('All: ', snacks);
+                    // // console.log('All: ', snacks);
                     break;
 
                     case Platform.Services.NowStreaming.label:
@@ -68,7 +70,7 @@ export default {
                         ...cell,
                         platform: cell.platform.filter(platform => platform.isBroadCasting === true)
                     }));
-                    console.log('now: ', snacks);
+                    // console.log('now: ', snacks);
                     break;
                     
                     default:
@@ -76,7 +78,7 @@ export default {
                         const filteredPlatforms = cell.platform.filter(platform => platform.platformName === this.categoryKeyword);
                         return filteredPlatforms.length > 0;
                     });
-                    console.log('default: ', snacks);
+                    // console.log('default: ', snacks);
                     break;
                 }
             }
@@ -87,11 +89,11 @@ export default {
                 var query = this.keyword;
                 var platformCount = user.platform.length;
 
-                // console.log('1st: ', this.keyword.slice(0, 1));
+                // // console.log('1st: ', this.keyword.slice(0, 1));
                 if ( user.userName.indexOf(this.keyword) !== -1 ) {
-                    console.log('111: ', user.platform[0]);
+                    // console.log('111: ', user.platform[0]);
                     for (var c in user.platform) {
-                        console.log('added: ', user.platform[c]);
+                        // console.log('added: ', user.platform[c]);
                         fruits.push({
                             ...user,
                             platform: [user.platform[c]]
@@ -105,7 +107,7 @@ export default {
 
                     if (filteredData.length > 0) {
                         for (var d in user.platform) {
-                            console.log('added2: ', user.platform[d]);
+                            // console.log('added2: ', user.platform[d]);
                             fruits.push({
                                 ...user,
                                 platform: [user.platform[d]]
@@ -115,11 +117,11 @@ export default {
                         // プラットフォームによる検索
                         for (var h = 0; h < platformCount; h++) {
                             var fLetter = user.platform[h].accountUserName.slice(0, 1);
-                            // console.log('プラット： ', fLetter, ' ', this.keyword.slice(0, 1));
+                            // // console.log('プラット： ', fLetter, ' ', this.keyword.slice(0, 1));
                             if ( fLetter == this.keyword.slice(0, 1) ){
                                 if ( user.platform[h].accountUserName.indexOf(this.keyword) !== -1 ){
                                     for (var k in user.platform) {
-                                        console.log('added3: ', user.platform[k]);
+                                        // console.log('added3: ', user.platform[k]);
                                         fruits.push({
                                             ...user,
                                             platform: [user.platform[k]]
@@ -136,7 +138,7 @@ export default {
             if ( this.categoryKeyword ) {
                 switch(this.categoryKeyword) {
                     case Platform.Services.All.label:
-                    console.log('All: ', fruits);
+                    // console.log('All: ', fruits);
                     break;
 
                     case Platform.Services.NowStreaming.label:
@@ -147,7 +149,7 @@ export default {
                         ...cell,
                         platform: cell.platform.filter(platform => platform.isBroadCasting === true)
                     }));
-                    console.log('now: ', fruits);
+                    // console.log('now: ', fruits);
                     break;
                     
                     default:
@@ -155,7 +157,7 @@ export default {
                         const filteredPlatforms = cell.platform.filter(platform => platform.platformName === this.categoryKeyword);
                         return filteredPlatforms.length > 0;
                     });
-                    console.log('default: ',fruits);
+                    // console.log('default: ',fruits);
                     break;
                 }
             }
