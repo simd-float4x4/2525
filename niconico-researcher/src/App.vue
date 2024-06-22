@@ -117,7 +117,7 @@ export default {
                         platformName: Platform.Services.Other.label,
                         hasAccount: true,
                         isBroadCasting: false,
-                        displayTextContent: 'FC2：@aaaa',
+                        displayTextContent: '(FC2)@aaaa',
                         accountUserName: '皐月　あーちゃん',
                         accountURL: 'https://www.twitch.tv/infinity_mkds',
                         accountIconImageURL: ''

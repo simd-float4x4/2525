@@ -17,7 +17,7 @@
         <div class="cell_user_name_area"
         @click="moveToUserStreamingURL( userData.platform[0].accountURL )">
             <div class="user_name" :style="cellViewBackground(userData.platform[0].platformId)">{{ userData.platform[0].accountUserName }}</div>
-            <div class="user_id_label"> {{ userData.platform[0].displayTextContent }} </div>
+            <div class="user_id_label"> {{ userData.platform[0].platformName + ': ' + userData.platform[0].displayTextContent }} </div>
         </div>
         <div class="cell_config_area"
         @click="moveToUserStreamingURL( FormURL )">

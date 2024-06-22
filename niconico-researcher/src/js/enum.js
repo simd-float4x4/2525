@@ -29,7 +29,7 @@ export const Services = {
     },
     Twitter: {
         serviceId: 6,
-        label: "X/スペース",
+        label: "X",
         icon: 'fa-brands fa-square-x-twitter',
         brandColor: '#0f1419',
     },
