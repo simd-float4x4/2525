@@ -59,8 +59,8 @@ export default {
                         accountIconImageURL: ''
                     },
                     {
-                        platformId: Platform.Services.Twitch.serviceId,
-                        platformName: Platform.Services.Twitch.label,
+                        platformId: Platform.Services.Twitcasting.serviceId,
+                        platformName: Platform.Services.Twitcasting.label,
                         hasAccount: true,
                         isBroadCasting: false,
                         displayTextContent: '@220niconico',

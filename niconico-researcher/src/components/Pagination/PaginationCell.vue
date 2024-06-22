@@ -1,6 +1,8 @@
 <template>
     <div class="pagination">
-        <CastCell v-for="(cell, idx) in displayCells" :key="idx" :userData="cell" :FormURL="FormURL" />
+          <div>
+            <CastCell v-for="(cell, idx) in displayCells" :key="idx" :userData="cell" :FormURL="FormURL" />
+        </div>
         <div class="page-btns">
             <div v-for="(n, pidx) in pages" :key="pidx">
                 <div v-if="n !== '...'">
@@ -51,9 +53,8 @@ export default {
             var snacks = [];
             var fruits = []; // 全部の結果
             snacks = this.Cells;
-            console.log(snacks);
         
-            if ( this.categoryKeyword ) {
+            if (this.categoryKeyword ) {
                 switch(this.categoryKeyword) {
                     case Platform.Services.All.label:
                     console.log('All: ', snacks);
@@ -85,10 +86,18 @@ export default {
                 var user  = snacks[i];  //回されてきたデータを変数foodに格納
                 var metaTags = user.userMetaName; 
                 var query = this.keyword;
+                var platformCount = user.platform.length;
 
                 // console.log('1st: ', this.keyword.slice(0, 1));
                 if ( user.userName.indexOf(this.keyword) !== -1 ) {
-                    fruits.push(user);
+                    console.log('111: ', user.platform[0]);
+                    for (var c in user.platform) {
+                        console.log('added: ', user.platform[c]);
+                        fruits.push({
+                            ...user,
+                            platform: [user.platform[c]]
+                        });
+                    }
                 } else {                                        
                     // メタタグによる検索
                     var filteredData = metaTags.filter(function(value) {
@@ -96,16 +105,21 @@ export default {
                     });
 
                     if (filteredData.length > 0) {
-                        fruits.push(user);
+                        for (var d in user.platform.length) {
+                            console.log('added2: ', d);
+                            fruits.push(user.platform[d]);
+                        }
                     } else {
                         // プラットフォームによる検索
-                        var platformCount = user.platform.length;
                         for (var h = 0; h < platformCount; h++) {
                             var fLetter = user.platform[h].accountUserName.slice(0, 1);
                             // console.log('プラット： ', fLetter, ' ', this.keyword.slice(0, 1));
                             if ( fLetter == this.keyword.slice(0, 1) ){
                                 if ( user.platform[h].accountUserName.indexOf(this.keyword) !== -1 ){
-                                    fruits.push(user);
+                                    for (var k in user.platform.length) {
+                                        console.log('added3: ', k);
+                                        fruits.push(user.platform[k]);
+                                    }
                                 }
                             }
                         }
@@ -121,6 +135,8 @@ export default {
                     return -1;
                 }
             });
+
+             console.log('fruits: ', fruits);
 
             // 末尾のページ番号
             // TODO: UnexpectedError対策
