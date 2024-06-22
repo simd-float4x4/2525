@@ -154,7 +154,47 @@ export default {
                         hasAccount: true,
                         isBroadCasting: true,
                         displayTextContent: '@2525coco',
-                        accountUserName: 'かわいいちゃん',
+                        accountUserName: 'にゃぴさん',
+                        accountURL: 'https://www.twitch.tv/infinity_mkds',
+                        accountIconImageURL: ''
+                    },
+                    {
+                        platformId: Platform.Services.TikTok.serviceId,
+                        platformName: Platform.Services.TikTok.label,
+                        hasAccount: true,
+                        isBroadCasting: false,
+                        displayTextContent: '@2525coco',
+                        accountUserName: 'にゃぴさん',
+                        accountURL: 'https://www.twitch.tv/infinity_mkds',
+                        accountIconImageURL: ''
+                    },
+                    {
+                        platformId: Platform.Services.Instagram.serviceId,
+                        platformName: Platform.Services.Instagram.label,
+                        hasAccount: true,
+                        isBroadCasting: false,
+                        displayTextContent: '@2525coco',
+                        accountUserName: 'にゃぴさん',
+                        accountURL: 'https://www.twitch.tv/infinity_mkds',
+                        accountIconImageURL: ''
+                    },
+                    {
+                        platformId: Platform.Services.LINEOpenChat.serviceId,
+                        platformName: Platform.Services.LINEOpenChat.label,
+                        hasAccount: true,
+                        isBroadCasting: true,
+                        displayTextContent: '@2525coco',
+                        accountUserName: 'にゃぴさん',
+                        accountURL: 'https://www.twitch.tv/infinity_mkds',
+                        accountIconImageURL: ''
+                    },
+                    {
+                        platformId: Platform.Services.Twitter.serviceId,
+                        platformName: Platform.Services.Twitter.label,
+                        hasAccount: true,
+                        isBroadCasting: true,
+                        displayTextContent: '@2525coco',
+                        accountUserName: 'にゃぴさん',
                         accountURL: 'https://www.twitch.tv/infinity_mkds',
                         accountIconImageURL: ''
                     }

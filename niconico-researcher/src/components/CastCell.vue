@@ -16,7 +16,7 @@
         </div>
         <div class="cell_user_name_area"
         @click="moveToUserStreamingURL( userData.platform[0].accountURL )">
-            <div class="user_name">{{ userData.platform[0].accountUserName }}</div>
+            <div class="user_name" :style="cellViewBackground(userData.platform[0].platformId)">{{ userData.platform[0].accountUserName }}</div>
             <div class="user_id_label"> {{ userData.platform[0].displayTextContent }} </div>
         </div>
         <div class="cell_config_area"
@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import * as Platform from "/Users/asobu_dev/Desktop/Project/System/niconicoSearcher/niconico-researcher/src/js/enum.js";
 
 export default {
   name: 'CastCell',
@@ -39,6 +40,51 @@ export default {
   methods: {
       moveToUserStreamingURL(url) {
         window.location.href = url;
+      },
+      cellViewBackground(index) {
+          var color = '';
+          switch(index) {
+            case Platform.Services.Twitch.serviceId:
+                color = Platform.Services.Twitch.brandColor;
+                break;
+            case Platform.Services.Whowatch.serviceId:
+                color = Platform.Services.Whowatch.brandColor;
+                break;
+            case Platform.Services.Twitcasting.serviceId:
+                color = Platform.Services.Twitcasting.brandColor;
+                break;
+            case Platform.Services.Twitter.serviceId:
+                color = Platform.Services.Twitter.brandColor;
+                break;
+            case Platform.Services.TikTok.serviceId:
+                color = Platform.Services.TikTok.brandColor;
+                break;
+            case Platform.Services.YouTubeLive.serviceId:
+                color = Platform.Services.YouTubeLive.brandColor;
+                break;
+            case Platform.Services.Instagram.serviceId:
+                color = Platform.Services.Instagram.brandColor;
+                break;
+            case Platform.Services.LINEOpenChat.serviceId:
+                color = Platform.Services.LINEOpenChat.brandColor;
+                break;
+            case Platform.Services.OpenREC.serviceId:
+                color = Platform.Services.OpenREC.brandColor;
+                break;
+            case Platform.Services.All.serviceId:
+                color = Platform.Services.All.brandColor;
+                break;
+            case Platform.Services.NowStreaming.serviceId:
+                color = Platform.Services.NowStreaming.brandColor;
+                break;
+            case Platform.Services.Other.serviceId:
+                color = Platform.Services.Other.brandColor;
+                break;
+          }
+          console.log('color: ', color);
+          return {
+               'border-left' : '5px solid' + color
+          }
       }
   }
 }
@@ -106,7 +152,6 @@ export default {
     font-size: 22px;
     font-weight: bold;
     color: black;
-    border-left: 5px solid red;
     padding-left: 8px;
 }
 
