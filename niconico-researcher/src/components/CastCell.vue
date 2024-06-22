@@ -12,7 +12,7 @@
                     <i class="fa-solid fa-video fa-fade"></i>
                 </div>
             </div>
-            <div class="user_seed_tag">{{ userData.platform[0].userHashTag }}</div>
+            <div class="user_seed_tag">{{ userData.userHashTag }}</div>
         </div>
         <div class="cell_user_name_area"
         @click="moveToUserStreamingURL( userData.platform[0].accountURL )">
