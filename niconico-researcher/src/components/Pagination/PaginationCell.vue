@@ -104,9 +104,12 @@ export default {
                     });
 
                     if (filteredData.length > 0) {
-                        for (var d in user.platform.length) {
-                            console.log('added2: ', d);
-                            fruits.push(user.platform[d]);
+                        for (var d in user.platform) {
+                            console.log('added2: ', user.platform[d]);
+                            fruits.push({
+                                ...user,
+                                platform: [user.platform[d]]
+                            });
                         }
                     } else {
                         // プラットフォームによる検索
@@ -115,9 +118,12 @@ export default {
                             // console.log('プラット： ', fLetter, ' ', this.keyword.slice(0, 1));
                             if ( fLetter == this.keyword.slice(0, 1) ){
                                 if ( user.platform[h].accountUserName.indexOf(this.keyword) !== -1 ){
-                                    for (var k in user.platform.length) {
-                                        console.log('added3: ', k);
-                                        fruits.push(user.platform[k]);
+                                    for (var k in user.platform) {
+                                        console.log('added3: ', user.platform[k]);
+                                        fruits.push({
+                                            ...user,
+                                            platform: [user.platform[k]]
+                                        });
                                     }
                                 }
                             }
@@ -127,41 +133,41 @@ export default {
             }
 
             // もう一度フィルタリング
-            if ( this.categoryKeyword ) {
-                switch(this.categoryKeyword) {
-                    case Platform.Services.All.label:
-                    console.log('All: ', snacks);
-                    break;
+            // if ( this.categoryKeyword ) {
+            //     switch(this.categoryKeyword) {
+            //         case Platform.Services.All.label:
+            //         console.log('All: ', fruits);
+            //         break;
 
-                    case Platform.Services.NowStreaming.label:
-                    fruits = fruits.filter(cell => {
-                        const filteredPlatforms = cell.platform.filter(platform => platform.isBroadCasting === true);
-                        return filteredPlatforms.length > 0;
-                    }).map(cell => ({
-                        ...cell,
-                        platform: cell.platform.filter(platform => platform.isBroadCasting === true)
-                    }));
-                    console.log('now: ', snacks);
-                    break;
+            //         case Platform.Services.NowStreaming.label:
+            //         fruits = fruits.filter(cell => {
+            //             const filteredPlatforms = cell.platform.filter(platform => platform.isBroadCasting === true);
+            //             return filteredPlatforms.length > 0;
+            //         }).map(cell => ({
+            //             ...cell,
+            //             platform: cell.platform.filter(platform => platform.isBroadCasting === true)
+            //         }));
+            //         console.log('now: ', fruits);
+            //         break;
                     
-                    default:
-                    fruits = fruits.filter(cell => {
-                        const filteredPlatforms = cell.platform.filter(platform => platform.platformName === this.categoryKeyword);
-                        return filteredPlatforms.length > 0;
-                    });
-                    console.log('default: ', snacks);
-                    break;
-                }
-            }
+            //         default:
+            //         fruits = fruits.filter(cell => {
+            //             const filteredPlatforms = cell.platform.filter(platform => platform.platformName === this.categoryKeyword);
+            //             return filteredPlatforms.length > 0;
+            //         });
+            //         console.log('default: ',fruits);
+            //         break;
+            //     }
+            // }
 
-            // 配信中の人が上になるように
-            fruits.sort(function(a, b) {
-                if (a.platform[0].isBroadCasting < b.platform[0].isBroadCasting) {
-                    return 1;
-                } else {
-                    return -1;
-                }
-            });
+            // // 配信中の人が上になるように
+            // fruits.sort(function(a, b) {
+            //     if (a.platform[0].isBroadCasting < b.platform[0].isBroadCasting) {
+            //         return 1;
+            //     } else {
+            //         return -1;
+            //     }
+            // });
 
              console.log('FiNAL FRUiTS ZiPPER: ', fruits);
 
