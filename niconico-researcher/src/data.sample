@@ -45,7 +45,7 @@ return {
                         displayTextContent: '@2525coco',
                         accountUserName: 'ここ',
                         accountURL: 'https://www.twitch.tv/infinity_mkds',
-                        accountIconImageURL: 'niconico-researcher/src/assets/image/sample_user_01.jpeg'
+                        accountIconImageURL: ''
                     }
                 ]
             },
@@ -57,13 +57,13 @@ return {
                 platform: [
                     {
                         platformId: Platform.Services.YouTubeLive.serviceId,
-                        platformName: Platform.Services.YouTubeLive.label,
+                        platformName: Platform.Services.YouTubeLive.labe,
                         hasAccount: true,
                         isBroadCasting: false,
                         displayTextContent: '@nemuko',
                         accountUserName: 'ねむこ＠へるぷ垢',
                         accountURL: 'https://www.twitch.tv/infinity_mkds',
-                        accountIconImageURL: 'niconico-researcher/src/assets/image/sample_user_02.jpeg'
+                        accountIconImageURL: ''
                     }
                 ]
             },
@@ -75,7 +75,7 @@ return {
 
 
 
-       created() {
+    created() {
         // itemの作成
         for (let i = 1; i <= 8500; i++) {
             var r = Math.floor( Math.random() * 10 ) + 1;

@@ -84,7 +84,7 @@ export default {
                         displayTextContent: '@2525coco',
                         accountUserName: 'ここ',
                         accountURL: 'https://www.twitch.tv/infinity_mkds',
-                        accountIconImageURL: 'niconico-researcher/src/assets/image/sample_user_01.jpeg'
+                        accountIconImageURL: ''
                     }
                 ]
             },
@@ -102,7 +102,7 @@ export default {
                         displayTextContent: '@nemuko',
                         accountUserName: 'ねむこ＠へるぷ垢',
                         accountURL: 'https://www.twitch.tv/infinity_mkds',
-                        accountIconImageURL: 'niconico-researcher/src/assets/image/sample_user_02.jpeg'
+                        accountIconImageURL: ''
                     }
                 ]
             },
