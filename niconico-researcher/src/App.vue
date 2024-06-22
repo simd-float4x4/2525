@@ -106,6 +106,60 @@ export default {
                     }
                 ]
             },
+            {
+                userId: 4,
+                userHashTag: '#9192',
+                userMetaName: ['茂原', '茂原会', '大イム', 'ご主人'],
+                userName: '大仏',
+                platform: [
+                    {
+                        platformId: Platform.Services.Other.serviceId,
+                        platformName: Platform.Services.Other.label,
+                        hasAccount: true,
+                        isBroadCasting: false,
+                        displayTextContent: 'FC2：@aaaa',
+                        accountUserName: 'あああ',
+                        accountURL: 'https://www.twitch.tv/infinity_mkds',
+                        accountIconImageURL: ''
+                    }
+                ]
+            },
+            {
+                userId: 5,
+                userHashTag: '#6789',
+                userMetaName: [],
+                userName: '皐月　りりあ',
+                platform: [
+                    {
+                        platformId: Platform.Services.OpenREC.serviceId,
+                        platformName: Platform.Services.OpenREC.label,
+                        hasAccount: true,
+                        isBroadCasting: false,
+                        displayTextContent: '@2525coco',
+                        accountUserName: 'ここ',
+                        accountURL: 'https://www.twitch.tv/infinity_mkds',
+                        accountIconImageURL: ''
+                    }
+                ]
+            },
+            {
+                userId: 6,
+                userHashTag: '#6790',
+                userMetaName: [],
+                userName: 'にゃぴさん',
+                platform: [
+                    {
+                        platformId: Platform.Services.OpenREC.serviceId,
+                        platformName: Platform.Services.OpenREC.label,
+                        hasAccount: true,
+                        isBroadCasting: true,
+                        displayTextContent: '@2525coco',
+                        accountUserName: 'ここ',
+                        accountURL: 'https://www.twitch.tv/infinity_mkds',
+                        accountIconImageURL: ''
+                    }
+                ]
+            },
           ],
       }
   },

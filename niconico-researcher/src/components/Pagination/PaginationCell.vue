@@ -19,6 +19,7 @@
 <script>
 import CastCell from '../CastCell.vue'
 import PageButton from './PaginationButton.vue';
+import * as Platform from "/Users/asobu_dev/Desktop/Project/System/niconicoSearcher/niconico-researcher/src/js/enum.js"
 
 export default {
     components: {
@@ -53,14 +54,32 @@ export default {
             console.log(snacks);
         
             if ( this.categoryKeyword ) {
-                snacks = snacks.filter(cell => {
-                    const filteredPlatforms = cell.platform.filter(platform => platform.platformName === this.categoryKeyword);
-                    return filteredPlatforms.length > 0;
-                });
-                console.log(snacks);
+                switch(this.categoryKeyword) {
+                    case Platform.Services.All.label:
+                    console.log('All: ', snacks);
+                    break;
+
+                    case Platform.Services.NowStreaming.label:
+                    snacks = snacks.filter(cell => {
+                        const filteredPlatforms = cell.platform.filter(platform => platform.isBroadCasting === true);
+                        return filteredPlatforms.length > 0;
+                    }).map(cell => ({
+                        ...cell,
+                        platform: cell.platform.filter(platform => platform.isBroadCasting === true)
+                    }));
+                    console.log('now: ', snacks);
+                    break;
+                    
+                    default:
+                    snacks = snacks.filter(cell => {
+                        const filteredPlatforms = cell.platform.filter(platform => platform.platformName === this.categoryKeyword);
+                        return filteredPlatforms.length > 0;
+                    });
+                    console.log('default: ', snacks);
+                    break;
+                }
+                
             }
-            
-            
 
             for(var i in snacks) {  //this.fruitsはdataで定義しているもの 3つのデータをforで順番に回していきます
                 var user  = snacks[i];  //回されてきたデータを変数foodに格納
