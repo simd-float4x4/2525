@@ -126,6 +126,7 @@ export default {
                 }    
             }
 
+            // もう一度フィルタリング
             if ( this.categoryKeyword ) {
                 switch(this.categoryKeyword) {
                     case Platform.Services.All.label:
@@ -162,7 +163,7 @@ export default {
                 }
             });
 
-             console.log('fruits: ', fruits);
+             console.log('FiNAL FRUiTS ZiPPER: ', fruits);
 
             // 末尾のページ番号
             // TODO: UnexpectedError対策

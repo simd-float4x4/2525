@@ -73,7 +73,6 @@ export default {
           default:
             console.log('error');
           }
-          console.log(this.category);
       }
     }
 }

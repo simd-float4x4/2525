@@ -2,22 +2,22 @@
     <div class="cell">
         <div class="cell_user_image_area">
             <div class="user_icon_container">
-                <div v-if="userData.accountIconImageURL">
-                    <div class="icon user_image_icon" :style="{ 'background-image': 'url(' + userData.accountIconImageURL + ')' }"></div>
+                <div v-if="userData.platform[0].accountIconImageURL">
+                    <div class="icon user_image_icon" :style="{ 'background-image': 'url(' + userData.platform[0].accountIconImageURL + ')' }"></div>
                 </div>
                 <div v-else>
                     <div class="icon user_image_icon"></div>
                 </div>
-                <div v-if="userData.isBroadCasting == true" class="icon user_is_broadcasting_icon">
+                <div v-if="userData.platform[0].isBroadCasting == true" class="icon user_is_broadcasting_icon">
                     <i class="fa-solid fa-video fa-fade"></i>
                 </div>
             </div>
-            <div class="user_seed_tag">{{ userData.userHashTag }}</div>
+            <div class="user_seed_tag">{{ userData.platform[0].userHashTag }}</div>
         </div>
         <div class="cell_user_name_area"
-        @click="moveToUserStreamingURL( userData.accountURL )">
-            <div class="user_name">{{ userData.userName }}</div>
-            <div class="user_id_label"> {{ userData.displayTextContent }} </div>
+        @click="moveToUserStreamingURL( userData.platform[0].accountURL )">
+            <div class="user_name">{{ userData.platform[0].accountUserName }}</div>
+            <div class="user_id_label"> {{ userData.platform[0].displayTextContent }} </div>
         </div>
         <div class="cell_config_area"
         @click="moveToUserStreamingURL( FormURL )">
