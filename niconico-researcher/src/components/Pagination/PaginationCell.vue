@@ -54,7 +54,7 @@ export default {
             var fruits = []; // 全部の結果
             snacks = this.Cells;
         
-            if (this.categoryKeyword ) {
+            if ( this.categoryKeyword ) {
                 switch(this.categoryKeyword) {
                     case Platform.Services.All.label:
                     console.log('All: ', snacks);
@@ -79,7 +79,6 @@ export default {
                     console.log('default: ', snacks);
                     break;
                 }
-
             }
 
             for(var i in snacks) {  //this.fruitsはdataで定義しているもの 3つのデータをforで順番に回していきます
@@ -125,6 +124,33 @@ export default {
                         }
                     }
                 }    
+            }
+
+            if ( this.categoryKeyword ) {
+                switch(this.categoryKeyword) {
+                    case Platform.Services.All.label:
+                    console.log('All: ', snacks);
+                    break;
+
+                    case Platform.Services.NowStreaming.label:
+                    fruits = fruits.filter(cell => {
+                        const filteredPlatforms = cell.platform.filter(platform => platform.isBroadCasting === true);
+                        return filteredPlatforms.length > 0;
+                    }).map(cell => ({
+                        ...cell,
+                        platform: cell.platform.filter(platform => platform.isBroadCasting === true)
+                    }));
+                    console.log('now: ', snacks);
+                    break;
+                    
+                    default:
+                    fruits = fruits.filter(cell => {
+                        const filteredPlatforms = cell.platform.filter(platform => platform.platformName === this.categoryKeyword);
+                        return filteredPlatforms.length > 0;
+                    });
+                    console.log('default: ', snacks);
+                    break;
+                }
             }
 
             // 配信中の人が上になるように
