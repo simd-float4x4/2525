@@ -118,7 +118,7 @@ export default {
                         hasAccount: true,
                         isBroadCasting: false,
                         displayTextContent: 'FC2：@aaaa',
-                        accountUserName: 'あああ',
+                        accountUserName: '皐月　あーちゃん',
                         accountURL: 'https://www.twitch.tv/infinity_mkds',
                         accountIconImageURL: ''
                     }
@@ -136,7 +136,7 @@ export default {
                         hasAccount: true,
                         isBroadCasting: false,
                         displayTextContent: '@2525coco',
-                        accountUserName: 'ここ',
+                        accountUserName: 'へるぷ',
                         accountURL: 'https://www.twitch.tv/infinity_mkds',
                         accountIconImageURL: ''
                     }
@@ -154,7 +154,7 @@ export default {
                         hasAccount: true,
                         isBroadCasting: true,
                         displayTextContent: '@2525coco',
-                        accountUserName: 'ここ',
+                        accountUserName: 'かわいいちゃん',
                         accountURL: 'https://www.twitch.tv/infinity_mkds',
                         accountIconImageURL: ''
                     }

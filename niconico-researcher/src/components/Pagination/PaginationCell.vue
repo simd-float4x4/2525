@@ -52,7 +52,7 @@ export default {
             var fruits = []; // 全部の結果
             snacks = this.Cells;
             console.log(snacks);
-        
+
             if ( this.categoryKeyword ) {
                 switch(this.categoryKeyword) {
                     case Platform.Services.All.label:
@@ -78,7 +78,7 @@ export default {
                     console.log('default: ', snacks);
                     break;
                 }
-                
+
             }
 
             for(var i in snacks) {  //this.fruitsはdataで定義しているもの 3つのデータをforで順番に回していきます
