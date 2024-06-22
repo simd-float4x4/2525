@@ -135,7 +135,7 @@ export default {
                         platformName: Platform.Services.OpenREC.label,
                         hasAccount: true,
                         isBroadCasting: false,
-                        displayTextContent: '@2525coco',
+                        displayTextContent: '@ryrya',
                         accountUserName: 'へるぷ',
                         accountURL: 'https://www.twitch.tv/infinity_mkds',
                         accountIconImageURL: ''
@@ -153,7 +153,7 @@ export default {
                         platformName: Platform.Services.OpenREC.label,
                         hasAccount: true,
                         isBroadCasting: true,
-                        displayTextContent: '@2525coco',
+                        displayTextContent: '@nyapi',
                         accountUserName: 'かわいいちゃん',
                         accountURL: 'https://www.twitch.tv/infinity_mkds',
                         accountIconImageURL: ''
@@ -171,7 +171,7 @@ export default {
                         platformName: Platform.Services.Twitcasting.label,
                         hasAccount: true,
                         isBroadCasting: true,
-                        displayTextContent: '@2525coco',
+                        displayTextContent: '@daih',
                         accountUserName: '辛い',
                         accountURL: 'https://www.twitch.tv/infinity_mkds',
                         accountIconImageURL: ''
@@ -181,7 +181,7 @@ export default {
                         platformName: Platform.Services.Whowatch.label,
                         hasAccount: true,
                         isBroadCasting: false,
-                        displayTextContent: '@2525coco',
+                        displayTextContent: '@2oco',
                         accountUserName: '辛い',
                         accountURL: 'https://www.twitch.tv/infinity_mkds',
                         accountIconImageURL: ''

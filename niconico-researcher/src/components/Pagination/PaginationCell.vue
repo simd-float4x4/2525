@@ -1,6 +1,6 @@
 <template>
     <div class="pagination">
-        <CastCell v-for="(cell, idx) in displayCells" :key="idx" :userData="cell" :FormURL="FormURL" />
+        <CastCell v-for="(cell, idx) in displayCells" :key="idx" :userData="cell" :FormURL="FormURL" :thisCell="thisCellPlatformName" />
         <div class="page-btns">
             <div v-for="(n, pidx) in pages" :key="pidx">
                 <div v-if="n !== '...'">
@@ -31,10 +31,12 @@ export default {
         keyword: String,
         FormURL: String,
         Cells: Array,
+        thisCellPlatformName: String,
         CellNumPerPage: Number // １ページあたりに表示する件数
     },
     data() {
         return {
+            thisCellPlatformName: null,
             pages: [],
             curPage: 1, // curPage starts from 1
             pageNum: 0, // number os pages
@@ -78,13 +80,18 @@ export default {
                     console.log('default: ', snacks);
                     break;
                 }
-
             }
 
             for(var i in snacks) {  //this.fruitsはdataで定義しているもの 3つのデータをforで順番に回していきます
                 var user  = snacks[i];  //回されてきたデータを変数foodに格納
                 var metaTags = user.userMetaName; 
                 var query = this.keyword;
+                if (!this.categoryKeyword) {
+                    // TODO: この場合の処理
+                } else {
+                    this.thisCellPlatformName = this.categoryKeyword;
+                } 
+                console.log('thisCellPlatformName: ', this.thisCellPlatformName);
 
                 // console.log('1st: ', this.keyword.slice(0, 1));
                 if ( user.userName.indexOf(this.keyword) !== -1 ) {

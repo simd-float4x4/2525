@@ -33,12 +33,24 @@
 export default {
   name: 'CastCell',
   props: {
-      userData: Object,
-      FormURL: String
+      userData: Object, // Object（１データ）
+      FormURL: String,
+      thisCell: String, // 検索するための文字列
+  },
+  data() {
+      return {
+          thisPlatform: this.getPlatform()
+      }
+  },
+  created () {
+      console.log('this: ', this.thisCell, this.thisPlatform); // null, // undefined
   },
   methods: {
+      getPlatform() {
+          this.thisPlatform = this.userData.platform.find(p => p.platformName === this.thisCell);
+      },
       moveToUserStreamingURL(url) {
-        window.location.href = url;
+          window.location.href = url;
       }
   }
 }
