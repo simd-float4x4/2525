@@ -160,6 +160,34 @@ export default {
                     }
                 ]
             },
+            {
+                userId: 7,
+                userHashTag: '#1290',
+                userMetaName: ['茂原', 'ブサイク界隈', 'ブサイク軍団', '大仏'],
+                userName: '大ちゃんマン',
+                platform: [
+                    {
+                        platformId: Platform.Services.Twitcasting.serviceId,
+                        platformName: Platform.Services.Twitcasting.label,
+                        hasAccount: true,
+                        isBroadCasting: true,
+                        displayTextContent: '@2525coco',
+                        accountUserName: '辛い',
+                        accountURL: 'https://www.twitch.tv/infinity_mkds',
+                        accountIconImageURL: ''
+                    },
+                    {
+                        platformId: Platform.Services.Whowatch.serviceId,
+                        platformName: Platform.Services.Whowatch.label,
+                        hasAccount: true,
+                        isBroadCasting: false,
+                        displayTextContent: '@2525coco',
+                        accountUserName: '辛い',
+                        accountURL: 'https://www.twitch.tv/infinity_mkds',
+                        accountIconImageURL: ''
+                    }
+                ]
+            },
           ],
       }
   },
