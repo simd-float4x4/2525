@@ -128,7 +128,7 @@ export default {
                 userId: 5,
                 userHashTag: '#6789',
                 userMetaName: [],
-                userName: '皐月　りりあ',
+                userName: '皐月　りりあ（RAIVEN）',
                 platform: [
                     {
                         platformId: Platform.Services.OpenREC.serviceId,

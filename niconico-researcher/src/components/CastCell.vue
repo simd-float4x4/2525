@@ -110,6 +110,8 @@ export default {
     font-size: 22px;
     font-weight: bold;
     color: black;
+    border-left: 5px solid red;
+    padding-left: 8px;
 }
 
 .user_id_label {
@@ -117,6 +119,7 @@ export default {
     height: 50%;
     font-size: 14px;
     color: gray;
+    margin-left: 13px;
 }
 
 .cell_config_area {
