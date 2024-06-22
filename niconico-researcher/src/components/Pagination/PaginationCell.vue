@@ -133,41 +133,41 @@ export default {
             }
 
             // もう一度フィルタリング
-            // if ( this.categoryKeyword ) {
-            //     switch(this.categoryKeyword) {
-            //         case Platform.Services.All.label:
-            //         console.log('All: ', fruits);
-            //         break;
+            if ( this.categoryKeyword ) {
+                switch(this.categoryKeyword) {
+                    case Platform.Services.All.label:
+                    console.log('All: ', fruits);
+                    break;
 
-            //         case Platform.Services.NowStreaming.label:
-            //         fruits = fruits.filter(cell => {
-            //             const filteredPlatforms = cell.platform.filter(platform => platform.isBroadCasting === true);
-            //             return filteredPlatforms.length > 0;
-            //         }).map(cell => ({
-            //             ...cell,
-            //             platform: cell.platform.filter(platform => platform.isBroadCasting === true)
-            //         }));
-            //         console.log('now: ', fruits);
-            //         break;
+                    case Platform.Services.NowStreaming.label:
+                    fruits = fruits.filter(cell => {
+                        const filteredPlatforms = cell.platform.filter(platform => platform.isBroadCasting === true);
+                        return filteredPlatforms.length > 0;
+                    }).map(cell => ({
+                        ...cell,
+                        platform: cell.platform.filter(platform => platform.isBroadCasting === true)
+                    }));
+                    console.log('now: ', fruits);
+                    break;
                     
-            //         default:
-            //         fruits = fruits.filter(cell => {
-            //             const filteredPlatforms = cell.platform.filter(platform => platform.platformName === this.categoryKeyword);
-            //             return filteredPlatforms.length > 0;
-            //         });
-            //         console.log('default: ',fruits);
-            //         break;
-            //     }
-            // }
+                    default:
+                    fruits = fruits.filter(cell => {
+                        const filteredPlatforms = cell.platform.filter(platform => platform.platformName === this.categoryKeyword);
+                        return filteredPlatforms.length > 0;
+                    });
+                    console.log('default: ',fruits);
+                    break;
+                }
+            }
 
             // // 配信中の人が上になるように
-            // fruits.sort(function(a, b) {
-            //     if (a.platform[0].isBroadCasting < b.platform[0].isBroadCasting) {
-            //         return 1;
-            //     } else {
-            //         return -1;
-            //     }
-            // });
+            fruits.sort(function(a, b) {
+                if (a.platform[0].isBroadCasting < b.platform[0].isBroadCasting) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            });
 
              console.log('FiNAL FRUiTS ZiPPER: ', fruits);
 
