@@ -52,7 +52,7 @@ export default {
             var fruits = []; // 全部の結果
             snacks = this.Cells;
             console.log(snacks);
-
+        
             if ( this.categoryKeyword ) {
                 switch(this.categoryKeyword) {
                     case Platform.Services.All.label:
@@ -83,33 +83,34 @@ export default {
 
             for(var i in snacks) {  //this.fruitsはdataで定義しているもの 3つのデータをforで順番に回していきます
                 var user  = snacks[i];  //回されてきたデータを変数foodに格納
+                var metaTags = user.userMetaName; 
+                var query = this.keyword;
 
                 // console.log('1st: ', this.keyword.slice(0, 1));
                 if ( user.userName.indexOf(this.keyword) !== -1 ) {
                     fruits.push(user);
-                } else {
+                } else {                                        
                     // メタタグによる検索
-                    var metaTagCount = user.userMetaName.length;
-                    for (var j = 0; j < metaTagCount; j++) {
-                        var firstLetter = user.userMetaName.slice(0, 1);
-                        if ( firstLetter == this.keyword.slice(0, 1) ){
-                            if ( user.userMetaName[j].indexOf(this.keyword) !== -1 ){
-                                fruits.push(user);
+                    var filteredData = metaTags.filter(function(value) {
+                        return value.includes(query);
+                    });
+
+                    if (filteredData.length > 0) {
+                        fruits.push(user);
+                    } else {
+                        // プラットフォームによる検索
+                        var platformCount = user.platform.length;
+                        for (var h = 0; h < platformCount; h++) {
+                            var fLetter = user.platform[h].accountUserName.slice(0, 1);
+                            // console.log('プラット： ', fLetter, ' ', this.keyword.slice(0, 1));
+                            if ( fLetter == this.keyword.slice(0, 1) ){
+                                if ( user.platform[h].accountUserName.indexOf(this.keyword) !== -1 ){
+                                    fruits.push(user);
+                                }
                             }
                         }
                     }
-                    // プラットフォームによる検索
-                    var platformCount = user.platform.length;
-                    for (var h = 0; h < platformCount; h++) {
-                        var fLetter = user.platform[h].accountUserName.slice(0, 1);
-                        // console.log('プラット： ', fLetter, ' ', this.keyword.slice(0, 1));
-                        if ( fLetter == this.keyword.slice(0, 1) ){
-                            if ( user.platform[h].accountUserName.indexOf(this.keyword) !== -1 ){
-                                fruits.push(user);
-                            }
-                        }
-                    }
-                }         
+                }    
             }
 
             // 配信中の人が上になるように
