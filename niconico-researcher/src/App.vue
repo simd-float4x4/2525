@@ -80,7 +80,7 @@ export default {
                         hasAccount: true,
                         isBroadCasting: false,
                         displayTextContent: '@nemuko',
-                        accountUserName: 'test' + i,
+                        accountUserName: 'test',
                         accountURL: 'https://www.twitch.tv/infinity_mkds',
                         accountIconImageURL: ''
                     }

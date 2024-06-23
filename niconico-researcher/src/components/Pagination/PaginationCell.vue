@@ -4,7 +4,7 @@
             <CastCell v-for="(cell, idx) in displayCells" :key="idx" :userData="cell" :FormURL="FormURL" />
         </div>
         <div v-if="displayCells.length === 0">
-            該当するデータがありませんでした {{ displayCells.length }}
+            該当するデータがありませんでした
         </div>
         <div class="page-btns">
             <div v-for="(n, pidx) in pages" :key="pidx">
@@ -55,9 +55,9 @@ export default {
         displayCells() {
             if (this.storedCategoryKeyword != this.categoryKeyword) {
                 this.changePage(1);
-                this.moreThanTwoIsClicked = false;
+                this.changeBoolValue(false);
             }
-            this.storedCategoryKeyword = this.categoryKeyword;
+            this.changeCategoryKeyword(this.categoryKeyword);
 
             var startIdx = (this.curPage - 1) * this.CellNumPerPage;
             var endIdx   = startIdx + this.CellNumPerPage;
@@ -201,6 +201,12 @@ export default {
     methods: {
         storeBoolValue(value){
             this.moreThanTwoIsClicked = value;
+        },
+        changeBoolValue(value){
+            this.moreThanTwoIsClicked = value;
+        },
+        changeCategoryKeyword(value){
+            this.storedCategoryKeyword = value;
         },
         ceilTwoElement(fruits){
             this.pageNum =  Math.ceil(fruits.length / this.CellNumPerPage)

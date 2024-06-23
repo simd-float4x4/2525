@@ -44,7 +44,6 @@
         height: 48px;
         background-color: lightgray;
         margin: 0 16px 16px 16px;
-        padding-right: 8px;
     }
 
     .search_form_input_area {
