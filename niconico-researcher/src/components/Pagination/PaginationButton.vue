@@ -54,4 +54,12 @@ export default {
         }
     }
 
+    .page-btn-item {
+        font-size: 12px;
+        font-family: "Oswald", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 200;
+        font-style: normal;
+    }
+
 </style>

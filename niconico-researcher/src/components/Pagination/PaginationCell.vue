@@ -3,8 +3,8 @@
         <div v-if="displayCells.length > 0">
             <CastCell v-for="(cell, idx) in displayCells" :key="idx" :userData="cell" :FormURL="FormURL" />
         </div>
-        <div v-else>
-            該当するデータがありませんでした
+        <div v-if="displayCells.length === 0">
+            該当するデータがありませんでした {{ displayCells.length }}
         </div>
         <div class="page-btns">
             <div v-for="(n, pidx) in pages" :key="pidx">
@@ -53,19 +53,19 @@ export default {
     },
     computed: {
         displayCells() {
+            if (this.storedCategoryKeyword != this.categoryKeyword) {
+                this.changePage(1);
+                this.moreThanTwoIsClicked = false;
+            }
+            this.storedCategoryKeyword = this.categoryKeyword;
+
             var startIdx = (this.curPage - 1) * this.CellNumPerPage;
             var endIdx   = startIdx + this.CellNumPerPage;
             var snacks = [];
             var fruits = []; // 全部の結果
             snacks = this.Cells;
 
-            if (this.storedCategoryKeyword != this.categoryKeyword) {
-                this.curPage = 1;
-                this.moreThanTwoIsClicked = false;
-            }
-
-            this.storedCategoryKeyword = this.categoryKeyword;
-
+            console.log('thisDis: ',  this.categoryKeyword, snacks, fruits);
 
             if ( this.categoryKeyword ) {
                 switch(this.categoryKeyword) {
@@ -93,6 +93,7 @@ export default {
                     break;
                 }
             }
+
 
             for(var i in snacks) {  //this.fruitsはdataで定義しているもの 3つのデータをforで順番に回していきます
                 var user  = snacks[i];  //回されてきたデータを変数foodに格納
@@ -188,6 +189,11 @@ export default {
             this.ceilTwoElement(fruits);
             this.resetPageNum();
             this.calcPageNum();
+
+            console.log('snacksLength: ', snacks.length);
+            console.log('fruitsLength: ', fruits.length);
+            console.log('slice: ', startIdx, endIdx);
+            console.log('sliced: ', fruits.slice(startIdx, endIdx));
 
             return fruits.slice(startIdx, endIdx);
         },
