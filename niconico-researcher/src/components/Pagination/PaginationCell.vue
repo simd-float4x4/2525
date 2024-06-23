@@ -10,6 +10,7 @@
             <div v-for="(n, pidx) in pages" :key="pidx">
                 <div v-if="n !== '...'">
                     <page-button @changePage="changePage"  
+                        @storeBoolValue="clickedMoreThanTwo"
                         :key="n" 
                         :pageNumber="n"
                         :curPage="curPage"
@@ -43,6 +44,8 @@ export default {
             pages: [],
             curPage: 1, // curPage starts from 1
             pageNum: 0, // number os pages
+            moreThanTwoIsClicked: false,
+            storedCategoryKeyword: ""
         }
     },
     created() {
@@ -55,7 +58,15 @@ export default {
             var snacks = [];
             var fruits = []; // 全部の結果
             snacks = this.Cells;
-        
+
+            if (this.storedCategoryKeyword != this.categoryKeyword) {
+                this.curPage = 1;
+                this.moreThanTwoIsClicked = false;
+            }
+
+            this.storedCategoryKeyword = this.categoryKeyword;
+
+
             if ( this.categoryKeyword ) {
                 switch(this.categoryKeyword) {
                     case Platform.Services.All.label:
@@ -182,6 +193,9 @@ export default {
         },
     },
     methods: {
+        storeBoolValue(value){
+            this.moreThanTwoIsClicked = value;
+        },
         ceilTwoElement(fruits){
             this.pageNum =  Math.ceil(fruits.length / this.CellNumPerPage)
         },

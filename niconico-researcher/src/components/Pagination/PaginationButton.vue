@@ -20,6 +20,10 @@ export default {
     methods: {
         btnPressed() {
             this.$emit('changePage', this.pageNumber);
+            if (this.pageNumber !=1 ) {
+                console.log('emitted: ', true);
+                this.$emit('clickedMoreThanTwo', true);
+            }
         }
     }
 }
