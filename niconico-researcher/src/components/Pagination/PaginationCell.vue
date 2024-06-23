@@ -65,7 +65,7 @@ export default {
             var fruits = []; // 全部の結果
             snacks = this.Cells;
 
-            console.log('thisDis: ',  this.categoryKeyword, snacks, fruits);
+            // console.log('thisDis: ',  this.categoryKeyword, snacks, fruits);
 
             if ( this.categoryKeyword ) {
                 switch(this.categoryKeyword) {
@@ -183,17 +183,17 @@ export default {
                 }
             });
 
-             console.log('FiNAL FRUiTS ZiPPER: ', fruits);
+            // console.log('FiNAL FRUiTS ZiPPER: ', fruits);
 
             // 末尾のページ番号
             this.ceilTwoElement(fruits);
             this.resetPageNum();
             this.calcPageNum();
 
-            console.log('snacksLength: ', snacks.length);
-            console.log('fruitsLength: ', fruits.length);
-            console.log('slice: ', startIdx, endIdx);
-            console.log('sliced: ', fruits.slice(startIdx, endIdx));
+            // console.log('snacksLength: ', snacks.length);
+            // console.log('fruitsLength: ', fruits.length);
+            // console.log('slice: ', startIdx, endIdx);
+            // console.log('sliced: ', fruits.slice(startIdx, endIdx));
 
             return fruits.slice(startIdx, endIdx);
         },
