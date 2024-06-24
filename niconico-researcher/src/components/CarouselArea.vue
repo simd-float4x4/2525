@@ -28,14 +28,13 @@
         name: 'CarouselArea',
         data: () => {
             return {
-                carouselCount: 5,
                 carousels: [
                     '',
                     '',
                     '',
                     '',
-                    '',
                 ],
+                carouselCount: 4,
                 currentCarouselNumber: 0,
             };
         },

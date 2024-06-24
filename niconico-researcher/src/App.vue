@@ -301,7 +301,7 @@ export default {
 body {
   margin: 0;
   padding: 0;
-  background-color: #252525;
+  background-color: black;
 }
 
 #app {
