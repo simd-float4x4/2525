@@ -63,6 +63,7 @@
         height: auto;
         color: white;
         padding: 16px;
+        margin-top: 64px;
     }
 
     .flex {
@@ -83,6 +84,7 @@
         color: #d7d7d7;
         border: 2px;
         text-decoration: none;
+        font-size: 13px;
     }
 
     .app_title {
