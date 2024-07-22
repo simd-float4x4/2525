@@ -1,26 +1,28 @@
 <template>
 
-<div class="container" v-if="article">
-    <div class="container-title">
-        <div class="row">
-            <div class="navigation">
-                <i class="fa-solid fa-circle-chevron-left"></i>
-                <router-link class="navigation-link" to="/news">戻る</router-link>
-            </div>
-        </div>
-        <div class="row">
-            <div class="date item">{{ article.noticeDate }}</div>
-            <div class="category item">{{ article.noticeCategory }}</div>
-        </div>
-    <hr>
-        <h3>
-            {{ article.noticeTitle }}
-        </h3>
-    </div>
-    <hr>
-    <div class="container-content">
-        <div v-html="article.noticeBody"></div>
-    </div>
+<div class="wrapper">
+  <div class="container" v-if="article">
+      <div class="container-title">
+          <div class="row">
+              <div class="navigation">
+                  <i class="fa-solid fa-circle-chevron-left"></i>
+                  <router-link class="navigation-link" to="/news">戻る</router-link>
+              </div>
+          </div>
+          <div class="row">
+              <div class="date item">{{ article.noticeDate }}</div>
+              <div class="category item">{{ article.noticeCategory }}</div>
+          </div>
+      <hr>
+          <h3>
+              {{ article.noticeTitle }}
+          </h3>
+      </div>
+      <hr>
+      <div class="container-content">
+          <div v-html="article.noticeBody"></div>
+      </div>
+  </div>
 </div>
 
 </template>
@@ -73,7 +75,7 @@ export default {
 </script>
 
 <style scoped>
-    .container {
+    .wrapper {
         margin: 16px;
         min-height: 90vh;
     }

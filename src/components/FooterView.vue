@@ -34,7 +34,7 @@
             <div class="flex">
                 <b>公式SNS</b>
             </div>
-            <div class="flex p-btm-90 ft-size-18">
+            <div class="flex p-btm-90 ft-size-18" v-on:click="goTwitterURL">
                 <i class="rounded-button fa-brands fa-x-twitter"></i>
             </div>
         </div>
@@ -51,8 +51,13 @@
             return {
                 add: process.env.VUE_APP_ADD_USER_URL,
                 modify: process.env.VUE_APP_MODIFY_USER_URL,
-                inquiry: process.env.VUE_APP_INQUIRY_URL,
+                inquiry: process.env.VUE_APP_INQUIRY_URL
             };
+        },
+        methods: {
+            goTwitterURL() {
+                window.location.href = 'https://x.com/nicochan_PR';
+            }
         }
     }
 </script>
@@ -63,6 +68,7 @@
         height: auto;
         color: white;
         padding: 16px;
+        margin-top: 64px;
     }
 
     .flex {
@@ -83,6 +89,7 @@
         color: #d7d7d7;
         border: 2px;
         text-decoration: none;
+        font-size: 13px;
     }
 
     .app_title {

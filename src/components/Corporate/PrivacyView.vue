@@ -156,8 +156,7 @@
 
     <div class="rules-container">
       <p>本ポリシーに関するお問い合わせは、下記の窓口までお願いいたします。</p>
-
-      <p>[ Google Form リンク]</p>
+      <p><a :href="inquiry" target="_blank" class="link">お問い合わせ窓口</a></p>
     </div>
     
     以上
@@ -173,7 +172,8 @@ export default {
   name: 'App',
   data() {
     return {
-      currentPrivacy: ''
+      currentPrivacy: '',
+      inquiry: process.env.VUE_APP_INQUIRY_URL
     }
   },
   methods: {
