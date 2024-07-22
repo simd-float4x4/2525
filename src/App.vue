@@ -86,7 +86,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  height: 100%;
+  height: auto;
 }
 
 .main_view {
@@ -94,8 +94,6 @@ body {
   width: 390px;
   height: auto;
   margin: 0 auto;
-  padding-bottom: 270px;
-  position: relative;
   min-height: 80vh;
 }
 

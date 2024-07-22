@@ -1,17 +1,42 @@
 <template>
     <div class="footer">
-        <div class="flex">
-            <router-link class="link border-r" to="/terms-use">利用規約</router-link>
-            <router-link class="link border-l" to="/privacy-policy">プライバシーポリシー</router-link>
-        </div>
-        <div class="flex">
-            <router-link class="link" to="/news">お知らせ一覧</router-link>
-        </div>
-        <div class="flex">
-            <span class="link">{{ currentVersion }}</span>
-        </div>
-        <div class="flex">
-            ©︎2024 nicochan All-Rights Reserved. 
+        <div class="container">
+            <div class="flex">
+                <div class="nav_title">
+                    <span class="app_title">nicochan </span>
+                    <span class="version">（{{ currentVersion }}）</span>
+                </div>
+            </div>
+            <div class="flex-p0">
+                <span class="copyright"> ©︎2024 nicochan All-Rights Reserved. </span>
+            </div>
+            <div class="flex">
+                <a :href="add" target="_blank">配信者登録フォーム</a>
+            </div>
+            <div class="flex">
+                <a :href="modify" target="_blank">情報修正フォーム</a>
+            </div>
+            <div class="flex">
+                <a :href="inquiry" target="_blank">お問い合わせ</a>
+            </div>
+            <div class="flex">
+                <router-link to="/terms-use" class="link">利用規約</router-link>
+            </div>
+            <div class="flex">
+                <router-link to="/privacy-policy" class="link">プライバシーポリシー</router-link>
+            </div>
+            <div class="flex">
+                <router-link class="link" to="/news">お知らせ一覧</router-link>
+            </div>
+            <div class="flex bd-btm">
+                
+            </div>
+            <div class="flex">
+                <b>公式SNS</b>
+            </div>
+            <div class="flex p-btm-90 ft-size-18">
+                <i class="rounded-button fa-brands fa-x-twitter"></i>
+            </div>
         </div>
     </div>
 </template>
@@ -22,6 +47,13 @@
         props: {
             currentVersion: String
         },
+        data() {
+            return {
+                add: process.env.VUE_APP_ADD_USER_URL,
+                modify: process.env.VUE_APP_MODIFY_USER_URL,
+                inquiry: process.env.VUE_APP_INQUIRY_URL,
+            };
+        }
     }
 </script>
 
@@ -29,17 +61,23 @@
     .footer {
         background-color: #252525;
         width: 100%;
-        height: 180px;
+        height: auto;
         color: white;
-        margin-bottom: 0;
-        position: absolute;
-        bottom: 0;
+        padding: 16px;
     }
 
     .flex {
         display: flex;
-        justify-content: center;
+        justify-content: left;
         margin-top: 16px;
+        padding: 0 8px;
+    }
+
+    .flex-p0 {
+        display: flex;
+        justify-content: left;
+        margin-top: 0px;
+        padding: 0 8px;
     }
 
     .link {
@@ -48,13 +86,43 @@
         text-decoration: none;
     }
 
-    .border-l {
-        border-left: solid white;   
-        padding: 0 8px;
+    .app_title {
+        width: auto;
+        height: 56px;
+        color: #f7f7f7;
+        font-weight: bold;
+        font-size: 24px;
     }
 
-    .border-r {
-        border-right: solid white;   
-        padding: 0 8px;
+    .version {
+        width: auto;
+        height: 56px;
+        color: #f7f7f7;
+        font-size: 12px;
+    }
+
+    .copyright {
+        color: lightgray;
+    }
+
+    .bd-btm {
+        border: 2px solid white;
+        border-height: 100px;
+    }
+
+    .p-btm-90 {
+        padding-bottom: 90px;
+    }
+
+    .ft-size-18 {
+        font-size: 24px;
+    }
+
+    .rounded-button {
+        border: 1px solid white;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        padding: 8px;
     }
 </style>
