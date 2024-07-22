@@ -11,13 +11,13 @@
                 <span class="copyright"> ©︎2024 nicochan All-Rights Reserved. </span>
             </div>
             <div class="flex">
-                <a :href="add" target="_blank">配信者登録フォーム</a>
+                <a :href="add" target="_blank" class="link">配信者登録フォーム</a>
             </div>
             <div class="flex">
-                <a :href="modify" target="_blank">情報修正フォーム</a>
+                <a :href="modify" target="_blank" class="link">情報修正フォーム</a>
             </div>
             <div class="flex">
-                <a :href="inquiry" target="_blank">お問い合わせ</a>
+                <a :href="inquiry" target="_blank" class="link">お問い合わせ</a>
             </div>
             <div class="flex">
                 <router-link to="/terms-use" class="link">利用規約</router-link>
@@ -60,7 +60,6 @@
 <style scoped>
     .footer {
         background-color: #252525;
-        width: 100%;
         height: auto;
         color: white;
         padding: 16px;
@@ -80,7 +79,7 @@
         padding: 0 8px;
     }
 
-    .link {
+    .link, .link:active, .link:visited {
         color: #d7d7d7;
         border: 2px;
         text-decoration: none;
