@@ -231,4 +231,8 @@ export default {
         display: flex;
         justify-content: center;
     }
+
+    .pagination {
+        min-height: 80vh;
+    }
 </style>

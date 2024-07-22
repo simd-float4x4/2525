@@ -13,5 +13,6 @@
 <style scoped>
     .container {
         margin: 16px;
+        min-height: 90vh;
     }
 </style>

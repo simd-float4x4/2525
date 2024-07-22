@@ -20,7 +20,7 @@
             <div class="user_id_label"> 
                 {{ userData.platform.platformName + ': ' + userData.platform.accountUserSubText }} <br>
                 <div class="url">
-                    {{ userData.platform.accountUserUrl }}
+                    
                 </div>
             </div>
         </div>

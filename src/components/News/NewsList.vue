@@ -55,6 +55,10 @@ export default {
         text-decoration: none;
     }
 
+    .container {
+        min-height: 90vh;
+    }
+
     .row {
         margin: 16px;
         display: flex;
