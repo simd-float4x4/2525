@@ -6,8 +6,10 @@
         </div>
         </div>
         <div v-if="displayCells.length === 0">
-            <div v-if="isInitialLoadingEnd == false" class="carousel_indicator_dot"></div>
-            <div v-if="isInitialLoadingEnd == true">
+            <div v-if="isInitialLoadingEnd === false">
+                <div class="carousel_indicator_dot"></div>
+            </div>
+            <div v-if="isInitialLoadingEnd === true">
                 該当するデータがありませんでした
             </div>
         </div>
@@ -156,6 +158,10 @@ export default {
             this.resetPageNum();
             this.calcPageNum();
 
+            if (fruits.length !== 0){
+                this.changeInitialLoadingStatus();
+            }
+
             return fruits.slice(startIdx, endIdx);
         },
     },
@@ -224,7 +230,6 @@ export default {
                     this.pages.push(this.pageNum);
                 }
             }
-            this.changeInitialLoadingStatus();
         },
         resetPageNum() {
             this.pages = [];
