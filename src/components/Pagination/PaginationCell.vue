@@ -72,7 +72,6 @@ export default {
             
             var fruits = [];
             var snacks = this.Cells;
-            this.changeInitialLoadingStatus();
             
             var all = Platform.Services.All.label;
             var now = Platform.Services.NowStreaming.label;
@@ -225,6 +224,7 @@ export default {
                     this.pages.push(this.pageNum);
                 }
             }
+            this.changeInitialLoadingStatus();
         },
         resetPageNum() {
             this.pages = [];
