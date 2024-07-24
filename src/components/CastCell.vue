@@ -147,7 +147,7 @@ export default {
     margin: 16px 0 16px 16px;
     text-align: left;
     white-space: nowrap;
-    overflow: hidden;
+    overflow-x: auto;
 }
 
 .user_name {
