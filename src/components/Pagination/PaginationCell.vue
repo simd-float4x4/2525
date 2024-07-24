@@ -6,7 +6,10 @@
         </div>
         </div>
         <div v-if="displayCells.length === 0">
-            該当するデータがありませんでした
+            <div v-if="isInitialLoadingEnd == false" class="carousel_indicator_dot"></div>
+            <div v-if="isInitialLoadingEnd == true">
+                該当するデータがありませんでした
+            </div>
         </div>
         <div class="page-btns">
             <div v-for="(n, pidx) in pages" :key="pidx">
@@ -47,7 +50,8 @@ export default {
             curPage: 1,
             pageNum: 0,
             moreThanTwoIsClicked: false,
-            storedCategoryKeyword: ""
+            storedCategoryKeyword: "",
+            isInitialLoadingEnd: false
         }
     },
     created() {
@@ -68,6 +72,7 @@ export default {
             
             var fruits = [];
             var snacks = this.Cells;
+            changeCategoryKeyword();
             
             var all = Platform.Services.All.label;
             var now = Platform.Services.NowStreaming.label;
@@ -156,6 +161,9 @@ export default {
         },
     },
     methods: {
+        changeInitialLoadingStatus() {
+            this.isInitialLoadingEnd = true;
+        },
         shuffle(array) {
             let currentIndex = array.length, temporaryValue, randomIndex;
 
