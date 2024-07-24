@@ -72,7 +72,7 @@ export default {
             
             var fruits = [];
             var snacks = this.Cells;
-            changeCategoryKeyword();
+            this.changeInitialLoadingStatus();
             
             var all = Platform.Services.All.label;
             var now = Platform.Services.NowStreaming.label;
