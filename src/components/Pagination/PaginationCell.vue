@@ -7,7 +7,9 @@
         </div>
         <div v-if="displayCells.length === 0">
             <div v-if="isInitialLoadingEnd === false">
-                <div class="carousel_indicator_dot"></div>
+                <div class="container">
+                    <i class="fa-solid fa-spinner fa-spin-pulse"></i>
+                </div>
             </div>
             <div v-if="isInitialLoadingEnd === true">
                 該当するデータがありませんでした
@@ -247,5 +249,12 @@ export default {
 
     .pagination {
         min-height: 80vh;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 48px;
     }
 </style>
