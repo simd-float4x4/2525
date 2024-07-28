@@ -33,7 +33,7 @@
 
 <script>
 import CastCell from '../CastCell.vue'
-import DummyCastCell from '../DummyCastCell.vue'
+// import DummyCastCell from '../DummyCastCell.vue'
 import PageButton from './PaginationButton.vue';
 import * as Platform from "../../js/enum.js"
 
@@ -41,7 +41,7 @@ export default {
     components: {
         CastCell,
         PageButton,
-        DummyCastCell
+        // DummyCastCell
     },
     props: {
         categoryKeyword: String,
