@@ -6,13 +6,12 @@
         </div>
         </div>
         <div v-if="displayCells.length === 0">
-            <div v-if="isInitialLoadingEnd === true">
+            <div v-if="isInitialLoadingEnd === false">
                 <div class="container">
                     <i class="fa-solid fa-spinner fa-spin-pulse"></i>
                 </div>
             </div>
-            <div v-if="isInitialLoadingEnd === false">
-                <DummyCastCell />
+            <div v-if="isInitialLoadingEnd === true">
                 該当するデータがありませんでした
             </div>
         </div>
