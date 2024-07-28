@@ -95,7 +95,7 @@
 <style>
     .carousel_area {
         background-color: darkgray;
-        width: 390px;
+        width: 100%;
         height: 250px;
         margin-bottom: 8px;
         position: relative;

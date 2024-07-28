@@ -6,12 +6,13 @@
         </div>
         </div>
         <div v-if="displayCells.length === 0">
-            <div v-if="isInitialLoadingEnd === false">
+            <div v-if="isInitialLoadingEnd === true">
                 <div class="container">
                     <i class="fa-solid fa-spinner fa-spin-pulse"></i>
                 </div>
             </div>
-            <div v-if="isInitialLoadingEnd === true">
+            <div v-if="isInitialLoadingEnd === false">
+                <DummyCastCell />
                 該当するデータがありませんでした
             </div>
         </div>
@@ -33,13 +34,15 @@
 
 <script>
 import CastCell from '../CastCell.vue'
+import DummyCastCell from '../DummyCastCell.vue'
 import PageButton from './PaginationButton.vue';
 import * as Platform from "../../js/enum.js"
 
 export default {
     components: {
         CastCell,
-        PageButton
+        PageButton,
+        DummyCastCell
     },
     props: {
         categoryKeyword: String,

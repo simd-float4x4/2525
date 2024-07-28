@@ -91,7 +91,8 @@ body {
 
 .main_view {
   background-color: #F7F7F7;
-  width: 390px;
+  min-width: 360px;
+  max-width: 500px;
   height: auto;
   margin: 0 auto;
   min-height: 80vh;

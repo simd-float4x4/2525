@@ -40,7 +40,7 @@
     }
 
     .search_form_view {
-        width: 358px;
+        width: auto;
         height: 48px;
         background-color: lightgray;
         margin: 0 16px 16px 16px;

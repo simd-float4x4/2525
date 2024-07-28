@@ -182,7 +182,7 @@ export default {
     }
 
     .wrapper {
-        width: 390px;
+        width: 100%;
         height: 64px;
         max-height: 64px;
         display: flex;

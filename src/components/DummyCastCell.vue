@@ -2,30 +2,25 @@
     <div class="cell">
         <div class="cell_user_image_area">
             <div class="user_icon_container">
-                <div v-if="userData.platform.accountIconImageUrl">
-                    <div class="icon user_image_icon" :style="{ 'background-image': 'url(' + userData.platform.accountIconImageUrl + ')' }"></div>
-                </div>
-                <div v-else>
+                <div>
                     <div class="icon user_image_icon"></div>
                 </div>
-                <div v-if="userData.platform.isBroadCasting == true" class="icon user_is_broadcasting_icon">
+                <div class="icon user_is_broadcasting_icon">
                     <i class="fa-solid fa-video fa-fade"></i>
                 </div>
             </div>
-            <div class="user_seed_tag">{{ userData.hashtag }}</div>
+            <div class="user_seed_tag">#0000</div>
         </div>
-        <div class="cell_user_name_area"
-        @click="moveToUserStreamingURL( userData.platform.accountUserUrl )">
-            <div class="user_name" :style="cellViewBackground(userData.platform.platformId)">{{ userData.platform.accountUserName }}</div>
+        <div class="cell_user_name_area">
+            <div class="user_name">ダミーデータ</div>
             <div class="user_id_label"> 
-                {{ userData.platform.platformName + ': ' + userData.platform.accountUserSubText }} <br>
+                Twitch: @sampledata<br>
                 <div class="url">
                     
                 </div>
             </div>
         </div>
-        <div class="cell_config_area"
-        @click="moveToUserStreamingURL( FormURL )">
+        <div class="cell_config_area">
             <div class="setting_option">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </div>
@@ -39,8 +34,7 @@ import * as Platform from "../js/enum.js";
 export default {
   name: 'CastCell',
   props: {
-      userData: Object,
-      FormURL: String
+
   },
   methods: {
       moveToUserStreamingURL(url) {

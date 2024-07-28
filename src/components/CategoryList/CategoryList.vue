@@ -79,7 +79,7 @@ export default {
 
 <style>
     .category_list_area {
-        width: 390px;
+        width: 100%;
         display: flex;
         overflow-x: scroll;
         overflow-y: hidden;
