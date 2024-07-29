@@ -122,19 +122,19 @@ export default {
         },
       ],
       items: [
-            { color: '#BAA898' },
-            { color: 'red' },
-            { color: '#6441a5' },
-            { color: '#fb5824' },
-            { color: '#0273ff' },
-            { color: '#c4302b' },
-            { color: '#FF4C11' },
-            { color: '#0f1419' },
-            { color: '#06c755' },
-            { color: '#fe2c55' },
-            { color: '#cf2e92' },
-            { color: '#252525' },
-            { color: '#6f4b3e' },
+            { color: '#BAA898' }, // all
+            { color: 'red' }, // now
+            { color: '#6441a5' }, // twitch
+            { color: '#fb5824' }, // whowatch
+            { color: '#0273ff' }, // twitcasting
+            { color: '#c4302b' }, // youtube
+            { color: '#FF4C11' }, // openrec
+            { color: '#0f1419' }, // X
+            { color: '#06c755' }, // line
+            { color: '#fe2c55' }, // tiktok
+            { color: '#cf2e92' }, // instagram
+            { color: '#252525' },　// niconico
+            { color: '#6f4b3e' }, // other
         ],
   }),
   emits: ['clickedIdNumber'], 
