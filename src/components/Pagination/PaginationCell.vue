@@ -103,10 +103,6 @@ export default {
 
                 for (var element in user.userPlatforms) {
 
-                    console.log("あ");
-                    console.log(reversed_user_name);
-                    console.log(reversedQuery);
-
                     if (user.userPlatforms[element].hasAccount !== true) {
                         break;
                     }
