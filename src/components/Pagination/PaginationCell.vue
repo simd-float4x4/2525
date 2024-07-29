@@ -99,7 +99,6 @@ export default {
             for(var i in snacks) {
                 var user  = snacks[i];
                 var metaNames = user.metaNames;
-                var reversed_user_name = this.reverseString(user.name);
 
                 for (var element in user.userPlatforms) {
 
@@ -111,6 +110,7 @@ export default {
 
                     // プラットフォームでユーザー名検索時の最初の文字を取得
                     var fLetter = user.userPlatforms[element].accountUserName.slice(0, 1);
+                    var reversed_user_name = this.reverseString(user.userPlatforms[element].accountUserName);
                     
                     // メタネームをフィルターする
                     var filteredData = metaNames.filter(function(value) {
