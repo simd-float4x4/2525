@@ -133,7 +133,7 @@ export default {
             { color: '#06c755' }, // line
             { color: '#fe2c55' }, // tiktok
             { color: '#cf2e92' }, // instagram
-            { color: '#252525' },　// niconico
+            { color: '#252525' }, // niconico
             { color: '#6f4b3e' }, // other
         ],
   }),
