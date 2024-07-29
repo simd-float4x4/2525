@@ -23,6 +23,9 @@
                     <div v-else-if="item.serviceId === 6" class="category_name" :style="itemSubTextStyle(key)" >
                         X
                     </div>
+                    <div v-else-if="item.serviceId === 11" class="category_name" :style="itemSubTextStyle(key)" >
+                        n
+                    </div>
                     <div v-else class="category_name" :style="itemSubTextStyle(key)">
                         <i v-bind:class="item.icon"></i>
                     </div>
@@ -106,6 +109,12 @@ export default {
             serviceId: 7
         },
         {
+            text: Platform.Services.Niconico.label, 
+            color: "NiconicoColor", 
+            icon: Platform.Services.Niconico.icon,
+            serviceId: 11
+        },
+        {
             text: Platform.Services.Other.label, 
             color: "OtherServiceColor", 
             icon: Platform.Services.Other.icon, 
@@ -121,10 +130,10 @@ export default {
             { color: '#c4302b' },
             { color: '#FF4C11' },
             { color: '#0f1419' },
-            
             { color: '#06c755' },
             { color: '#fe2c55' },
             { color: '#cf2e92' },
+            { color: '#252525' },
             { color: '#6f4b3e' },
         ],
   }),

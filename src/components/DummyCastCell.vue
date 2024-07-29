@@ -12,7 +12,7 @@
             <div class="user_seed_tag">#0000</div>
         </div>
         <div class="cell_user_name_area">
-            <div class="user_name">ダミーデータ</div>
+            <div class="user_name"  :style="cellViewBackground(11)">ダミーデータ</div>
             <div class="user_id_label"> 
                 Twitch: @sampledata<br>
                 <div class="url">
@@ -78,6 +78,9 @@ export default {
                 break;
             case Platform.Services.Other.serviceId:
                 color = Platform.Services.Other.brandColor;
+                break;
+            case Platform.Services.Niconico.serviceId:
+                color = Platform.Services.Niconico.brandColor;
                 break;
           }
           return {

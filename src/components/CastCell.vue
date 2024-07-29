@@ -85,6 +85,9 @@ export default {
             case Platform.Services.Other.serviceId:
                 color = Platform.Services.Other.brandColor;
                 break;
+            case Platform.Services.Niconico.serviceId:
+                color = Platform.Services.Niconico.brandColor;
+                break;
           }
           return {
                'border-left' : '5px solid' + color

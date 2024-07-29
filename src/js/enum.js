@@ -56,6 +56,11 @@ export const Services = {
         label: "ミルダム",
         brandColor: '',
     },
+    Niconico: {
+        serviceId: 11,
+        label: "niconico",
+        brandColor: '#252525',
+    },
     All: {
         serviceId: 997,
         label: "ALL",

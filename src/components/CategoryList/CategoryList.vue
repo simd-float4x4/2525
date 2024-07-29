@@ -60,6 +60,9 @@ export default {
           case 9:
             this.category = Platform.Services.OpenREC.label;
             break;
+          case 11:
+            this.category = Platform.Services.Niconico.label;
+            break;
           case 997:
             this.category = Platform.Services.All.label;
             break;
