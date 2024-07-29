@@ -82,6 +82,7 @@ export default {
             var all = Platform.Services.All.label;
             var now = Platform.Services.NowStreaming.label;
             var query = this.keyword;
+            var reversedQuery = this.reverseString(query);
 
             if (this.categoryKeyword === now) {
                 snacks = snacks.filter(u => {
@@ -98,6 +99,7 @@ export default {
             for(var i in snacks) {
                 var user  = snacks[i];
                 var metaNames = user.metaNames;
+                var reversed_user_name = this.reverseString(user.name);
 
                 for (var element in user.userPlatforms) {
 
@@ -119,6 +121,10 @@ export default {
                     if ( user.name.indexOf(query) !== -1 ) {
                         isThisMatched = true
                     
+                    // ユーザー名検索（逆検索）
+                    } else if (reversed_user_name.indexOf(reversedQuery) !== -1 ) {
+                        isThisMatched = true
+
                     // メタタグ検索
                     } else if ( filteredData.length > 0 ) {
                         isThisMatched = true
@@ -237,6 +243,9 @@ export default {
         },
         resetPageNum() {
             this.pages = [];
+        },
+        reverseString(str) {
+            return str.split("").reverse().join("");
         }
     }
 }
