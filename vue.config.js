@@ -7,7 +7,7 @@ module.exports = {
     devServer: {
         proxy: {
             '/v1/': {
-                target: process.env.USE_LOCAL_SERVER ? 'http://localhost:8080' : `${process.env.VUE_APP_PREFIX_URL}`
+                target: process.env.USE_LOCAL_SERVER ? `${process.env.VUE_APP_DEVELOPMENT_PREFIX_URL}` : `${process.env.VUE_APP_PREFIX_URL}`
             }
         }
     }
