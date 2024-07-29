@@ -123,6 +123,8 @@ export default {
                     
                     // ユーザー名検索（逆検索）
                     } else if (reversed_user_name.indexOf(reversedQuery) !== -1 ) {
+                        console.log(reversed_user_name)
+                        console.log(reversedQuery)
                         isThisMatched = true
 
                     // メタタグ検索
