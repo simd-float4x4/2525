@@ -110,7 +110,8 @@ export default {
 
                     // プラットフォームでユーザー名検索時の最初の文字を取得
                     var fLetter = user.userPlatforms[element].accountUserName.slice(0, 1);
-                    var reversed_user_name = this.reverseString(user.userPlatforms[element].accountUserName);
+                    var reversed_user_name_p = this.reverseString(user.userPlatforms[element].accountUserName);
+                    var reversed_user_name = this.reverseString(user.name);
                     
                     // メタネームをフィルターする
                     var filteredData = metaNames.filter(function(value) {
@@ -120,9 +121,13 @@ export default {
                     // ユーザー名検索
                     if ( user.name.indexOf(query) !== -1 ) {
                         isThisMatched = true
-                    
+
                     // ユーザー名検索（逆検索）
-                    } else if (reversed_user_name.indexOf(reversedQuery) !== -1 ) {
+                    } else if ( reversed_user_name.indexOf(reversedQuery) !== -1 ) {
+                        isThisMatched = true
+
+                    // アカウントユーザー名検索（逆検索）
+                    } else if ( reversed_user_name_p.indexOf(reversedQuery) !== -1 ) {
                         isThisMatched = true
 
                     // メタタグ検索
