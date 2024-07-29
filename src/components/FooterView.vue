@@ -20,12 +20,6 @@
                 <a :href="inquiry" target="_blank" class="link">お問い合わせ</a>
             </div>
             <div class="flex">
-                <router-link to="/terms-use" class="link">利用規約</router-link>
-            </div>
-            <div class="flex">
-                <router-link to="/privacy-policy" class="link">プライバシーポリシー</router-link>
-            </div>
-            <div class="flex">
                 <router-link class="link" to="/news">お知らせ一覧</router-link>
             </div>
             <div class="flex bd-btm">
