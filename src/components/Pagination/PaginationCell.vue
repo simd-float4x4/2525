@@ -60,7 +60,7 @@ export default {
             moreThanTwoIsClicked: false,
             storedCategoryKeyword: "",
             isInitialLoadingEnd: false,
-            initialElement; false
+            initialElement: false
         }
     },
     created() {
@@ -160,13 +160,13 @@ export default {
                             ...user,
                             platform: user.userPlatforms[element]
                         });
-                        if (initialElement) {
+                        if (this.initialElement) {
                             fruits.push({
                                 ...user,
                                 platform: user.userPlatforms[element]
                             });
                         } else {
-                            initialElement = false
+                            this.changeInitialElementFlag();
                         }
                     }
                 }
@@ -194,6 +194,9 @@ export default {
     methods: {
         changeInitialLoadingStatus() {
             this.isInitialLoadingEnd = true;
+        },
+        changeInitialElementFlag() {
+            this.initialElement = false
         },
         shuffle(array) {
             let currentIndex = array.length, temporaryValue, randomIndex;
