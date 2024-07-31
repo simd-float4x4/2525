@@ -58,6 +58,12 @@ export default {
             serviceId: 998
         },
         {
+            text: Platform.Services.Niconico.label, 
+            color: "NiconicoColor", 
+            icon: Platform.Services.Niconico.icon,
+            serviceId: 11
+        },
+        {
             text: Platform.Services.Twitch.label, 
             color: "TwitchServiceColor", 
             icon: Platform.Services.Twitch.icon, 
@@ -109,12 +115,6 @@ export default {
             serviceId: 7
         },
         {
-            text: Platform.Services.Niconico.label, 
-            color: "NiconicoColor", 
-            icon: Platform.Services.Niconico.icon,
-            serviceId: 11
-        },
-        {
             text: Platform.Services.Other.label, 
             color: "OtherServiceColor", 
             icon: Platform.Services.Other.icon, 
@@ -124,6 +124,7 @@ export default {
       items: [
             { color: '#BAA898' }, // all
             { color: 'red' }, // now
+            { color: '#252525' }, // niconico
             { color: '#6441a5' }, // twitch
             { color: '#fb5824' }, // whowatch
             { color: '#0273ff' }, // twitcasting
@@ -133,7 +134,6 @@ export default {
             { color: '#06c755' }, // line
             { color: '#fe2c55' }, // tiktok
             { color: '#cf2e92' }, // instagram
-            { color: '#252525' }, // niconico
             { color: '#6f4b3e' }, // other
         ],
   }),
