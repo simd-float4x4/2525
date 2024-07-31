@@ -65,7 +65,6 @@ export default {
     },
     computed: {
         displayCells() {
-            var initialElement = true;
             // カテゴリを変更するとき、強制的にページネーションを1にする
             if (this.storedCategoryKeyword != this.categoryKeyword) {
                 this.changePage(1);
