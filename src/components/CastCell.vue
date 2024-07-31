@@ -49,11 +49,13 @@ export default {
       }
   },
   computed: {
-      this.thisCellPlatformName = this.userData.platform.platformName;
-      this.thisCellPlatformText = this.userData.platform.accountUserSubText;
       // this.printOutDebugData();
   }, 
   methods: {
+      updateSubText() {
+        this.thisCellPlatformName = this.userData.platform.platformName;
+        this.thisCellPlatformText = this.userData.platform.accountUserSubText;
+      },
       printOutDebugData() {
           console.log(`platformName: ${this.userData.platform.platformName}`);
           console.log(`accountUserName: ${this.userData.platform.accountUserName}`);
@@ -65,6 +67,7 @@ export default {
         window.open(url, '_blank')
       },
       cellViewBackground(index) {
+          this.updateSubText();
           var color = '';
           switch(index) {
             case Platform.Services.Twitch.serviceId:
