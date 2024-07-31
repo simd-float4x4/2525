@@ -1,8 +1,10 @@
 <template>
     <div class="pagination">
         <div v-if="displayCells.length > 0">
-        <div v-for="(cell, key) in displayCells" :key="key">
-            <CastCell :userData="cell" :FormURL="FormURL" />
+        <div v-for="(cell, key, index) in displayCells" :key="key">
+            <div v-if="index !== 0">
+                <CastCell :userData="cell" :FormURL="FormURL" />
+            </div>
         </div>
         </div>
         <div v-if="displayCells.length === 0">
