@@ -18,7 +18,7 @@
         @click="moveToUserStreamingURL( userData.platform.accountUserUrl )">
             <div class="user_name" :style="cellViewBackground(userData.platform.platformId)">{{ userData.platform.accountUserName }}</div>
             <div class="user_id_label"> 
-                {{ userData.platform.platformName }} :  {{ userData.platform.accountUserSubText }} <br>
+                {{ userData.platform.accountUserSubText }}
             </div>
         </div>
         <div class="cell_config_area"
@@ -182,7 +182,7 @@ export default {
 
 .user_id_label {
     width: 100%;
-    height: auto;
+    height: 16px;
     font-size: 14px;
     color: gray;
     margin-left: 13px;
