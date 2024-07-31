@@ -2,8 +2,7 @@
     <div class="pagination">
         <div v-if="displayCells.length > 0">
         <div v-for="(cell, key) in displayCells" :key="key">
-            <div v-if="key !== 0">
-                key
+            <div v-show="key !== 0">
                 <CastCell :userData="cell" :FormURL="FormURL" />
             </div>
         </div>
