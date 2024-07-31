@@ -55,6 +55,7 @@ export default {
       updateSubText() {
         this.thisCellPlatformName = this.userData.platform.platformName;
         this.thisCellPlatformText = this.userData.platform.accountUserSubText;
+        console.log(this.userData.platform.accountUserSubText);
       },
       printOutDebugData() {
           console.log(`platformName: ${this.userData.platform.platformName}`);
