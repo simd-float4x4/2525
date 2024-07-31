@@ -3,6 +3,7 @@
         <div v-if="displayCells.length > 0">
         <div v-for="(cell, key, index) in displayCells" :key="key">
             {{ key }}
+            ----
             {{ index}}
             <div v-show="key !== 0">
                 <CastCell :userData="cell" :FormURL="FormURL" />
