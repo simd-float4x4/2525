@@ -154,16 +154,15 @@ export default {
                         isThisMatched = false
                     }
 
-                    if (initialElement === true) {
-                        fruits.push({
-                            ...user,
-                            platform: user.userPlatforms[element]
-                        });
-                        initialElement = false;
-                    }
-
                     // 一つでも合致すればデータを入れてしまう
                     if(isThisMatched) {
+                        if (initialElement === true) {
+                            fruits.push({
+                                ...user,
+                                platform: user.userPlatforms[element]
+                            });
+                            initialElement = false;
+                        }
                         fruits.push({
                             ...user,
                             platform: user.userPlatforms[element]
