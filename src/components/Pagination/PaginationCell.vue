@@ -59,7 +59,8 @@ export default {
             pageNum: 0,
             moreThanTwoIsClicked: false,
             storedCategoryKeyword: "",
-            isInitialLoadingEnd: false
+            isInitialLoadingEnd: false,
+            initialElement; false
         }
     },
     created() {
@@ -159,6 +160,14 @@ export default {
                             ...user,
                             platform: user.userPlatforms[element]
                         });
+                        if (initialElement) {
+                            fruits.push({
+                                ...user,
+                                platform: user.userPlatforms[element]
+                            });
+                        } else {
+                            initialElement = false
+                        }
                     }
                 }
             }
