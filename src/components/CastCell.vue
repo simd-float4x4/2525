@@ -42,7 +42,17 @@ export default {
       userData: Object,
       FormURL: String
   },
+  created() {
+      this.printOutDebugData();
+  }, 
   methods: {
+      printOutDebugData() {
+          console.log(`platformName: ${this.userData.platform.platformName}`);
+          console.log(`accountUserName: ${this.userData.platform.accountUserName}`);
+          console.log(`accountUserUrl: ${this.userData.platform.accountUserUrl}`);
+          console.log(`accountUserSubText: ${this.userData.platform.accountUserSubText}`);
+          console.log(`accountIconImageUrl: ${this.userData.platform.accountIconImageUrl}`);
+      },
       moveToUserStreamingURL(url) {
         window.open(url, '_blank')
       },
