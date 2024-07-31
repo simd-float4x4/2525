@@ -65,9 +65,6 @@ export default {
     },
     computed: {
         displayCells() {
-            // スマホバグだるいので空配列を挿入
-            fruits.push([]);
-
             // カテゴリを変更するとき、強制的にページネーションを1にする
             if (this.storedCategoryKeyword != this.categoryKeyword) {
                 this.changePage(1);
