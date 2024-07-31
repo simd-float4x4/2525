@@ -165,9 +165,8 @@ export default {
                                 ...user,
                                 platform: user.userPlatforms[element]
                             });
-                        } else {
                             this.changeInitialElementFlag();
-                        }
+                        } 
                     }
                 }
             }
