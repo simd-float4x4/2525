@@ -2,9 +2,7 @@
     <div class="pagination">
         <div v-if="displayCells.length > 0">
         <div v-for="(cell, key) in displayCells" :key="key">
-            <div v-show="key !== 0">
-                <CastCell :userData="cell" :FormURL="FormURL" />
-            </div>
+            <CastCell :userData="cell" :FormURL="FormURL" />
         </div>
         </div>
         <div v-if="displayCells.length === 0">
@@ -156,13 +154,6 @@ export default {
 
                     // 一つでも合致すればデータを入れてしまう
                     if(isThisMatched) {
-                        if (initialElement === true) {
-                            fruits.push({
-                                ...user,
-                                platform: user.userPlatforms[element]
-                            });
-                            initialElement = false;
-                        }
                         fruits.push({
                             ...user,
                             platform: user.userPlatforms[element]
