@@ -1,5 +1,4 @@
 <template>
-    {{ userData.platform }}
     <div class="cell">
         <div class="cell_user_image_area">
             <div class="user_icon_container">
