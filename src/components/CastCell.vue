@@ -40,11 +40,17 @@ export default {
   name: 'CastCell',
   props: {
       userData: Object,
-      thisCellPlatformName: String,
-      thisCellPlatformText: String,
       FormURL: String
   },
+  data() {
+      return {
+        thisCellPlatformName: "",
+        thisCellPlatformText: "",
+      }
+  },
   created() {
+      this.thisCellPlatformName = this.userData.platform.platformName;
+      this.thisCellPlatformText = this.userData.platform.accountUserSubText;
       // this.printOutDebugData();
   }, 
   methods: {

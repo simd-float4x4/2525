@@ -2,7 +2,7 @@
     <div class="pagination">
         <div v-if="displayCells.length > 0">
         <div v-for="(cell, idx) in displayCells" :key="idx">
-            <CastCell :userData="cell" :thisCellPlatformName="cell.platformName" :thisCellPlatformText="cell.accountUserSubText" :FormURL="FormURL" />
+            <CastCell :userData="cell" :FormURL="FormURL" />
         </div>
         </div>
         <div v-if="displayCells.length === 0">
