@@ -51,6 +51,14 @@ export default {
   created() {
       this.updateSubText();
   },
+  watch: {
+    this.userData.platform.platformName: function() {
+        this.thisCellPlatformName = this.userData.platform.platformName;
+    },
+    this.userData.platform.accountUserSubText: function() {
+        this.thisCellPlatformText = this.userData.platform.accountUserSubText;
+    },
+  }
   methods: {
       updateSubText() {
         this.thisCellPlatformName = this.userData.platform.platformName;
