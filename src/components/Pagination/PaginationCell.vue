@@ -160,13 +160,13 @@ export default {
                             ...user,
                             platform: user.userPlatforms[element]
                         });
-                        if (this.initialElement) {
+                        if (this.initialElement === true) {
                             fruits.push({
                                 ...user,
                                 platform: user.userPlatforms[element]
                             });
                             this.changeInitialElementFlag();
-                        } 
+                        }
                     }
                 }
             }
