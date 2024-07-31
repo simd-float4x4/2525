@@ -53,9 +53,11 @@ export default {
   }, 
   methods: {
       updateSubText() {
-        this.thisCellPlatformName = this.userData.platform.platformName;
-        this.thisCellPlatformText = this.userData.platform.accountUserSubText;
-        console.log(this.userData.platform.accountUserSubText);
+        this.$nextTick(() => {
+            this.thisCellPlatformName = this.userData.platform.platformName;
+            this.thisCellPlatformText = this.userData.platform.accountUserSubText;
+            console.log(this.userData.platform.accountUserSubText);
+        });
       },
       printOutDebugData() {
           console.log(`platformName: ${this.userData.platform.platformName}`);
