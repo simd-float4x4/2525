@@ -2,7 +2,8 @@
     <div class="pagination">
         <div v-if="displayCells.length > 0">
         <div v-for="(cell, idx) in displayCells" :key="idx">
-            <CastCell :userData="cell" :FormURL="FormURL" />
+            <CastCell v-if="idx == 0" :userData="cell" :FormURL="FormURL" />
+            <CastCell v-else :userData="cell" :FormURL="FormURL" />
         </div>
         </div>
         <div v-if="displayCells.length === 0">
@@ -65,6 +66,9 @@ export default {
     },
     computed: {
         displayCells() {
+            // スマホバグだるいので空配列を挿入
+            fruits.push([]);
+
             // カテゴリを変更するとき、強制的にページネーションを1にする
             if (this.storedCategoryKeyword != this.categoryKeyword) {
                 this.changePage(1);
