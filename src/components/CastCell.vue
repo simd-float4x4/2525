@@ -17,7 +17,7 @@
         <div class="cell_user_name_area"
         @click="moveToUserStreamingURL( userData.platform.accountUserUrl )">
             <div class="user_name" :style="cellViewBackground(userData.platform.platformId)">{{ userData.platform.accountUserName }}</div>
-            <div class="user_id_label" v-if="isVisible"> 
+            <div class="user_id_label" :key="renderKey"> 
                 {{ thisCellPlatformName + ': ' + thisCellPlatformText }} <br>
                 <div class="url">
                     
@@ -46,7 +46,7 @@ export default {
       return {
         thisCellPlatformName: "",
         thisCellPlatformText: "",
-        isVisible: true,
+        renderKey: 0,
       }
   },
   computed: {
@@ -56,10 +56,7 @@ export default {
       updateSubText() {
         this.thisCellPlatformName = this.userData.platform.platformName;
         this.thisCellPlatformText = this.userData.platform.accountUserSubText;
-        this.isVisible = false;
-        this.$nextTick(() => {
-            this.isVisible = true;
-        });
+        this.renderKey += 1; 
       },
       printOutDebugData() {
           console.log(`platformName: ${this.userData.platform.platformName}`);
