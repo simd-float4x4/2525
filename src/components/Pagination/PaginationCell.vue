@@ -153,21 +153,28 @@ export default {
 
                     // 一つでも合致すればデータを入れてしまう
                     if(isThisMatched) {
-                        fruits.push({
-                            ...user,
-                            platform: user.userPlatforms[element]
-                        });
+                        if (user.userPlatforms[element].isBroadCasting === true) {
+                            fruits.unshift({
+                                ...user,
+                                platform: user.userPlatforms[element]
+                            });
+                        } else {
+                            fruits.push({
+                                ...user,
+                                platform: user.userPlatforms[element]
+                            });
+                        }
                     }
                 }
             }
 
-            fruits.sort(function(a, b) {
-                if (a.userPlatforms[0].isBroadCasting < b.userPlatforms[0].isBroadCasting) {
-                    return 1;
-                } else {
-                    return -1;
-                }
-            });
+            // fruits.sort(function(a, b) {
+            //     if (a.userPlatforms[0].isBroadCasting < b.userPlatforms[0].isBroadCasting) {
+            //         return 1;
+            //     } else {
+            //        return -1;
+            //     }
+            // });
 
             this.ceilTwoElement(fruits);
             this.resetPageNum();
