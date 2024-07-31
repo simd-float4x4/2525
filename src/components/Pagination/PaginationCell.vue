@@ -60,7 +60,7 @@ export default {
             moreThanTwoIsClicked: false,
             storedCategoryKeyword: "",
             isInitialLoadingEnd: false,
-            initialElement: false
+            initialElement: true
         }
     },
     created() {
