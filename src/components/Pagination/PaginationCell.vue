@@ -169,8 +169,6 @@ export default {
                 }
             });
 
-            console.log(fruits[0]);
-
             this.ceilTwoElement(fruits);
             this.resetPageNum();
             this.calcPageNum();
