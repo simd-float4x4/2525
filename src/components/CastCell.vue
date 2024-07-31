@@ -18,7 +18,7 @@
         @click="moveToUserStreamingURL( userData.platform.accountUserUrl )">
             <div class="user_name" :style="cellViewBackground(userData.platform.platformId)">{{ userData.platform.accountUserName }}</div>
             <div class="user_id_label"> 
-                {{ userData.platform.platformName + ': ' + userData.platform.accountUserSubText }} <br>
+                {{ thisCellPlatformName + ': ' + thisCellPlatformText }} <br>
                 <div class="url">
                     
                 </div>
@@ -40,6 +40,8 @@ export default {
   name: 'CastCell',
   props: {
       userData: Object,
+      thisCellPlatformName: String,
+      thisCellPlatformText: String,
       FormURL: String
   },
   created() {
