@@ -1,4 +1,5 @@
 <template>
+    {{ userData.platform }}
     <div class="cell">
         <div class="cell_user_image_area">
             <div class="user_icon_container">
@@ -185,7 +186,7 @@ export default {
 
 .user_id_label {
     width: 100%;
-    height: 50%;
+    height: auto;
     font-size: 14px;
     color: gray;
     margin-left: 13px;
