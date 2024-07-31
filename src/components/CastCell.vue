@@ -48,7 +48,7 @@ export default {
         thisCellPlatformText: "",
       }
   },
-  created() {
+  updated() {
       this.thisCellPlatformName = this.userData.platform.platformName;
       this.thisCellPlatformText = this.userData.platform.accountUserSubText;
       // this.printOutDebugData();
