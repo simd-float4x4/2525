@@ -2,8 +2,9 @@
     <div class="pagination">
         <div v-if="displayCells.length > 0">
         <div v-for="(cell, idx) in displayCells" :key="idx">
-            <CastCell v-if="idx == 0 && visibility" :userData="cell" :FormURL="FormURL" />
-            <CastCell v-else :userData="cell" :FormURL="FormURL" />
+            <div v-if="idx !== 0">
+                <CastCell :userData="cell" :FormURL="FormURL" />
+            </div>
         </div>
         </div>
         <div v-if="displayCells.length === 0">
@@ -58,8 +59,7 @@ export default {
             pageNum: 0,
             moreThanTwoIsClicked: false,
             storedCategoryKeyword: "",
-            isInitialLoadingEnd: false,
-            visibility: false
+            isInitialLoadingEnd: false
         }
     },
     created() {
