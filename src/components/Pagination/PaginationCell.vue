@@ -154,19 +154,20 @@ export default {
                         isThisMatched = false
                     }
 
+                    if (this.initialElement === true) {
+                        fruits.push({
+                            ...user,
+                            platform: user.userPlatforms[element]
+                        });
+                        this.changeInitialElementFlag();
+                    }
+
                     // 一つでも合致すればデータを入れてしまう
                     if(isThisMatched) {
                         fruits.push({
                             ...user,
                             platform: user.userPlatforms[element]
                         });
-                        if (this.initialElement === true) {
-                            fruits.push({
-                                ...user,
-                                platform: user.userPlatforms[element]
-                            });
-                            this.changeInitialElementFlag();
-                        }
                     }
                 }
             }
