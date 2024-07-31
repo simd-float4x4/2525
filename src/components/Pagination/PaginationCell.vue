@@ -1,9 +1,7 @@
 <template>
     <div class="pagination">
         <div v-if="displayCells.length > 0">
-        <div v-for="(cell, key, index) in displayCells" :key="key">
-            key: {{ key }}
-            index: {{ index}}
+        <div v-for="(cell, key) in displayCells" :key="key">
             <div v-show="key !== 0">
                 <CastCell :userData="cell" :FormURL="FormURL" />
             </div>
@@ -61,8 +59,7 @@ export default {
             pageNum: 0,
             moreThanTwoIsClicked: false,
             storedCategoryKeyword: "",
-            isInitialLoadingEnd: false,
-            initialElement: true
+            isInitialLoadingEnd: false
         }
     },
     created() {
@@ -70,6 +67,7 @@ export default {
     },
     computed: {
         displayCells() {
+            var initialElement = true;
             // カテゴリを変更するとき、強制的にページネーションを1にする
             if (this.storedCategoryKeyword != this.categoryKeyword) {
                 this.changePage(1);
@@ -156,12 +154,12 @@ export default {
                         isThisMatched = false
                     }
 
-                    if (this.initialElement === true) {
+                    if (initialElement === true) {
                         fruits.push({
                             ...user,
                             platform: user.userPlatforms[element]
                         });
-                        this.changeInitialElementFlag();
+                        initialElement = false;
                     }
 
                     // 一つでも合致すればデータを入れてしまう
@@ -196,9 +194,6 @@ export default {
     methods: {
         changeInitialLoadingStatus() {
             this.isInitialLoadingEnd = true;
-        },
-        changeInitialElementFlag() {
-            this.initialElement = false
         },
         shuffle(array) {
             let currentIndex = array.length, temporaryValue, randomIndex;
