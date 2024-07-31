@@ -56,7 +56,6 @@ export default {
       updateSubText() {
         this.thisCellPlatformName = this.userData.platform.platformName;
         this.thisCellPlatformText = this.userData.platform.accountUserSubText;
-        console.log(this.thisCellPlatformName);
         this.isVisible = false;
         this.$nextTick(() => {
             this.isVisible = true;
